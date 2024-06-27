@@ -1,0 +1,35 @@
+<!-- cart/view_cart.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Cart</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Your Cart</h1>
+    <ul>
+        {% for item in cart_items %}
+        <li>
+            {{ item.product.name }} - Quantity:
+            <form method="post" action="{% url 'cart:view_cart' %}">
+                {% csrf_token %}
+                <input type="hidden" name="cart_item_id" value="{{ item.id }}">
+                <input type="hidden" name="action" value="update">
+                <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}">
+                <button type="submit">Update</button>
+            </form>
+            - Price: ${{ item.product.price }}
+            <form method="post" action="{% url 'cart:view_cart' %}">
+                {% csrf_token %}
+                <input type="hidden" name="cart_item_id" value="{{ item.id }}">
+                <input type="hidden" name="action" value="delete">
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'cart:add_to_cart' %}">Add More Products</a>
+</body>
+</html>

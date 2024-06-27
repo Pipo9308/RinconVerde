@@ -12,6 +12,32 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 
+# Logging configuration
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',  # O nivel que necesites (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+            'class': 'logging.StreamHandler',
+        },
+        # Agrega más handlers si es necesario para guardar logs en archivos, etc.
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': 'DEBUG',  # O nivel que necesites
+            'propagate': True,
+        },
+    },
+}
+
+# Configuración de sesión
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Backend de sesión (almacenamiento en base de datos)
+SESSION_COOKIE_NAME = 'sessionid'  # Nombre de la cookie de sesión
+SESSION_COOKIE_AGE = 86400  # Tiempo de vida de la cookie de sesión en segundos (por ejemplo, 1 día)
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -38,17 +64,19 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Producto',
+    'cart',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',  # Middleware de sesión
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'RinconVerde.urls'
 

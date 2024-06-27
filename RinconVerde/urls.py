@@ -22,5 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('Producto/', include('Producto.urls')),
     path('', producto_views.index, name='brotes'),  # URL raíz
+    path('cart/', include('cart.urls')),
 ]
 

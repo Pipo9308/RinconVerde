@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add to Cart</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Add to Cart</h1>
+    <form method="post" action="{% url 'cart:add_to_cart' %}">
+        {% csrf_token %}
+        <label for="product">Select a Product:</label><br>
+        <select name="product_id" id="product">
+            {% for product in products %}
+            <option value="{{ product.id }}">{{ product.name }} - ${{ product.price }}</option>
+            {% endfor %}
+        </select><br><br>
+        Quantity: <input type="number" name="quantity" value="1" min="1"><br><br>
+        <button type="submit">Add to Cart</button>
+    </form>
+    <a href="{% url 'cart:view_cart' %}">View Cart</a>
+</body>
+</html>
