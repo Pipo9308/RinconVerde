@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="CSS/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/brotes.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="carrito.js"></script>
+    <title>Brotes</title>
+</head>
+<body>
+ <!-- Inicio de la barra de navegación -->
+ <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <!-- Este es el logo o nombre de la página web -->
+  <img src="IMG/Helen (2).png" alt="" style="width: 100px;">
+  <a class="navbar-brand text-white" href="#"><strong>Rincón Verde</strong></a>
+  <!-- Este botón aparece cuando la pantalla es pequeña (responsive design) -->
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- Aquí están los enlaces de la barra de navegación -->
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <!-- Cada 'li' es un enlace en la barra de navegación -->
+      <li class="nav-item active">
+        <a class="nav-link text-white" href="index.html"><strong>Inicio</strong></a>
+      </li>
+      <!-- Dropdown -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <strong>Plantas</strong>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="brotes.html"><strong>Brotes</strong></a></li>
+          <li><a class="dropdown-item" href="arbustos.html"><strong>Arbustos</strong></a></li>
+        </ul>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+          data-bs-toggle="dropdown" aria-expanded="false">
+          <strong>Productos</strong>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <li><a class="dropdown-item" href="sustrato.html"><strong>Sustratos</strong></a></li>
+          <li><a class="dropdown-item" href="macetero.html"><strong>Maceteros</strong></a></li>
+        </ul>
+      </li>
+    </ul>
+    <!-- Iconos de usuario y carrito alineados a la derecha -->
+    <a href="login.html" class="navbar-text text-white ms-auto me-3" id="userIcon">
+      <i class="fas fa-user"></i> <span id="usernameDisplay"></span>
+    </a>
+    <span class="navbar-text text-white me-3" id="cartIcon" data-bs-toggle="modal" data-bs-target="#cartModal">
+      <i class="fa fa-shopping-cart"></i>
+    </span>
+  </div>
+</nav>
+</div>
+</nav>
+<!-- Fin de la barra de navegación -->
+  <!-- Carrito de Compras Modal -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="cartItems">
+              <!-- Items del carrito serán agregados aquí -->
+            </tbody>
+          </table>
+          <p class="text-end"><strong>Total: <span id="cartTotal">0</span></strong></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <a href="carrito.html" class="btn btn-primary">Proceder al Pago</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- Productos -->
+    <h1><img src="IMG/headers/brotes.png" alt=". . ." style="max-width: 100%; height: auto;"></h1>
+    <!-- Cards -->
+    <div class="container mt-5">
+        <div class="row d-flex align-items-stretch">
+            <!-- Primera card -->
+            <div class="col-md-4">
+                <!-- Card -->
+                <div class="card h-100">
+                    <!-- Imagen -->
+                    <img src="IMG/plantas/asplenium.jpg" class="card-img-top" alt="Imagen del producto">
+                    <div class="card-body d-flex flex-column">
+                        <!-- Nombre -->
+                        <h5 class="card-title">Asplenium (Asplenium L.)</h5>
+                        <!-- Descripcion -->
+                        <p class="card-text">Conocido como “nido de ave” por la forma de roseta en la que están dispuestas sus hojas. El Asplenium, Se caracteriza por su follaje de hojas grandes, lisas y con el borde ligeramente ondulado. Convirtiéndose en uno de los helechos de mayor tendencia para la decoración de interiores.</p>
+                        <!-- Contenedor -->
+                        <div class="mt-auto">
+                          <!-- Precio -->
+                          <p class="card-price">Precio: $7.500</p>
+                          <!-- Disponibilidad -->
+                          <p class="card-availability"><strong>Disponibilidad:</strong> 10 Unidades</p>
+                          <!-- Boton para agregar al carrito -->
+                          <div class="text-center">
+                            <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Segunda card -->
+            <div class="col-md-4">
+                <!-- Card -->
+                <div class="card h-100">
+                    <!-- Imagen -->
+                    <img src="IMG/plantas/echinocactus.jpg" class="card-img-top" alt="Imagen del producto">
+                    <div class="discount-image">
+                      <p class="discount-text">20% Descuento</p>
+                  </div>
+                    <div class="card-body d-flex flex-column">
+                        <!-- Nombre -->
+                        <h5 class="card-title">Asiento de Suegra (Echinocactus Grusonii)</h5>
+                        <!-- Descripcion -->
+                        <p class="card-text">Los grusonii son oriundos de México y es uno de los cactus más populares. Y es que a pesar de que tienen espinas muy afiladas es una de las variedades de cactus más decorativos.</p>
+                        <!-- Contenedor -->
+                        <div class="mt-auto">
+                          <!-- Precio -->
+                          <p class="card-price">Precio: $22.000</p>
+                          <!-- Disponibilidad -->
+                          <p class="card-availability"><strong>Disponibilidad:</strong> 2 Unidades</p>
+                          <!-- Boton para agregar al carrito -->
+                          <div class="text-center">
+                            <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tercera card -->
+            <div class="col-md-4">
+            <!-- Card -->
+            <div class="card h-100">
+                <!-- Imagen -->
+                <img src="IMG/plantas/wax.jpg" class="card-img-top" alt="Imagen del producto">
+                <div class="card-body d-flex flex-column">
+                    <!-- Nombre -->
+                    <h5 class="card-title">Amaryllis Wax (Hippeastrum sp.)</h5>
+                    <!-- Descripcion -->
+                    <p class="card-text">Si buscas un regalo especial, sabemos que este producto te sorprenderá. Estos bulbos de Amaryllis recubiertos con una cera de color pueden florecer sin riego.</p>
+                    <!-- Contenedor -->
+                    <div class="mt-auto">
+                      <!-- Precio -->
+                      <p class="card-price">Precio: $22.000</p>
+                      <!-- Disponibilidad -->
+                      <p class="card-availability"><strong>Disponibilidad:</strong> 15 Unidades</p>
+                      <!-- Boton para agregar al carrito -->
+                      <div class="text-center">
+                        <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+    <div class="row d-flex align-items-stretch">
+        <!-- Primera card -->
+        <div class="col-md-4">
+            <!-- Card -->
+            <div class="card h-100">
+                <!-- Imagen -->
+                <img src="IMG/plantas/amapola.jpg" class="card-img-top" alt="Imagen del producto">
+                <div class="card-body d-flex flex-column">
+                    <!-- Nombre -->
+                    <h5 class="card-title">Amapola (Papaver rhoeas)</h5>
+                    <!-- Descripcion -->
+                    <p class="card-text">La amapola es una flor de extraordinaria belleza y simbolismo, conocida científicamente como Papaver rhoeas. Con sus delicados pétalos en tonos vibrantes de rojo, rosa, blanco y naranja, la amapola es una adición cautivadora a cualquier jardín o arreglo floral.</p>
+                    <!-- Contenedor -->
+                    <div class="mt-auto">
+                      <!-- Precio -->
+                      <p class="card-price">Precio: $5.000</p>
+                      <!-- Disponibilidad -->
+                      <p class="card-availability"><strong>Disponibilidad:</strong> 7 Unidades</p>
+                      <!-- Boton para agregar al carrito -->
+                      <div class="text-center">
+                        <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Segunda card -->
+        <div class="col-md-4">
+            <!-- Card -->
+            <div class="card h-100">
+                <!-- Imagen -->
+                <img src="IMG/plantas/venus.jpg" class="card-img-top" alt="Imagen del producto">
+                <div class="card-body d-flex flex-column">
+                    <!-- Nombre -->
+                    <h5 class="card-title">Venus Atrapamoscas (Dionaea muscipula)</h5>
+                    <!-- Descripcion -->
+                    <p class="card-text">La Venus Atrapamoscas, conocida científicamente como Dionaea muscipula, es una de las plantas carnívoras más fascinantes y exóticas que puedes encontrar. Con su habilidad única para atrapar y digerir insectos, esta planta no solo es una maravilla de la naturaleza, sino también una adición intrigante para cualquier coleccionista de plantas o amante de la jardinería.</p>
+                    <!-- Contenedor -->
+                    <div class="mt-auto">
+                      <!-- Precio -->
+                      <p class="card-price">Precio: $13.000</p>
+                      <!-- Disponibilidad -->
+                      <p class="card-availability"><strong>Disponibilidad:</strong> Sin Unidades</p>
+                      <!-- Boton para agregar al carrito -->
+                      <div class="text-center">
+                        <button class="btn btn-danger">Agregar al carrito</button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Tercera columna para la tercera tarjeta -->
+        <div class="col-md-4">
+            <!-- Card -->
+            <div class="card h-100">
+                <!-- Imagen de la card -->
+                <img src="IMG/plantas/helecho.jpg" class="card-img-top" alt="Imagen del producto">
+                <div class="card-body d-flex flex-column">
+                    <!-- Nombre de la card -->
+                    <h5 class="card-title">Helecho Espada (Nephrolepis exaltata)</h5>
+                    <!-- Descripcion de la card -->
+                    <p class="card-text">El Helecho Espada, también conocido como Nephrolepis exaltata, es una planta de interior popular apreciada por su elegante follaje verde y su capacidad para purificar el aire. Originario de regiones tropicales y subtropicales, este helecho es una opción versátil y de bajo mantenimiento para agregar un toque de frescura y tranquilidad a cualquier espacio.</p>
+                    <!-- Contenedor -->
+                    <div class="mt-auto">
+                      <!-- Precio -->
+                      <p class="card-price">Precio: $8000</p>
+                      <!-- Disponibilidad -->
+                      <p class="card-availability"><strong>Disponibilidad:</strong> 11 Unidades</p>
+                      <!-- Boton para agregar al carrito -->
+                      <div class="text-center">
+                        <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+     <!-- Footer -->
+     <footer class="bg-success text-light py-2">
+      <div class="container2">
+          <div class="row">
+              <div class="col-md-6 mt-2">
+                  <h5>Contacto</h5>
+                  <ul class="list-unstyled text-light">
+                      <li><i class="fa-solid fa-house me-2"></i>Dirección: Avenida Siempreviva #742, Springfield</i></li>
+                      <li><i class="fa-solid fa-phone me-2"></i>Teléfono: +123 456 789 </i></li>
+                      <li><i class="fa-solid fa-envelope me-2"></i>Correo Electrónico: info@rinconverde.com</i></li>
+                      <li><i class="fa-solid fa-circle-question me-2"></i></i>Ayuda</i></li>
+                  </ul>
+              </div>
+              <div class="col-md-6 mt-2">
+                  <h5>Redes Sociales</h5>
+                  <ul class="list-unstyled">
+                      <li><a href="https://www.facebook.com" class="text-light"><i
+                                  class="fab fa-facebook-f me-2"></i>Facebook</a></li>
+                      <li><a href="https://www.x.com" class="text-light"><i
+                                  class="fab fa-twitter me-2"></i>Twitter</a></li>
+                      <li><a href="https://www.instagram.com" class="text-light"><i
+                                  class="fab fa-instagram me-2"></i>Instagram</a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </footer>
+  
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <!-- Javascript -->
+    <script src="script.js"></script>
+</body>
+</html>
