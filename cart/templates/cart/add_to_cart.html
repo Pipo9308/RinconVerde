@@ -3,22 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>Add to Cart</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Add to Cart</h1>
-    <form method="post" action="{% url 'cart:add_to_cart' %}">
-        {% csrf_token %}
-        <label for="product">Select a Product:</label><br>
-        <select name="product_id" id="product">
-            {% for product in products %}
-            <option value="{{ product.id }}">{{ product.name }} - ${{ product.price }}</option>
-            {% endfor %}
-        </select><br><br>
-        Quantity: <input type="number" name="quantity" value="1" min="1"><br><br>
-        <button type="submit">Add to Cart</button>
-    </form>
-    <a href="{% url 'cart:view_cart' %}">View Cart</a>
+    <div class="container mt-5">
+        <h1>Añadir al Carrito</h1>
+        <form method="post" action="{% url 'cart:add_to_cart' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="product">Selecciona un producto:</label>
+                <select name="product_id" id="product" class="form-control">
+                    {% for product in products %}
+                    <option value="{{ product.id }}">{{ product.name }} - ${{ product.price }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantity">Cantidad:</label>
+                <input type="number" name="quantity" value="1" min="1" class="form-control">
+            </div>
+            <button type="submit" class="btn btn-primary">Agregar al carrito</button>
+        </form>
+        <a href="{% url 'cart:view_cart' %}" class="btn btn-secondary mt-3">Ver carrito</a>
+    </div>
 </body>
 </html>
+

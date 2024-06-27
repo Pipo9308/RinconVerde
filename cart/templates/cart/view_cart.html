@@ -3,33 +3,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Your Cart</title>
+    <title>Cart</title>
     {% load static %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Your Cart</h1>
-    <ul>
-        {% for item in cart_items %}
-        <li>
-            {{ item.product.name }} - Quantity:
-            <form method="post" action="{% url 'cart:view_cart' %}">
-                {% csrf_token %}
-                <input type="hidden" name="cart_item_id" value="{{ item.id }}">
-                <input type="hidden" name="action" value="update">
-                <input type="number" name="quantity" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}">
-                <button type="submit">Update</button>
-            </form>
-            - Price: ${{ item.product.price }}
-            <form method="post" action="{% url 'cart:view_cart' %}">
-                {% csrf_token %}
-                <input type="hidden" name="cart_item_id" value="{{ item.id }}">
-                <input type="hidden" name="action" value="delete">
-                <button type="submit">Delete</button>
-            </form>
-        </li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'cart:add_to_cart' %}">Add More Products</a>
+    <div class="container mt-5">
+        <h1 class="mb-4">Carrito de compras</h1>
+        <ul class="list-group">
+            {% for item in cart_items %}
+            <li class="list-group-item">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <strong>{{ item.product.name }}</strong><br>
+                        Cantidad:
+                        <form method="post" action="{% url 'cart:view_cart' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="cart_item_id" value="{{ item.id }}">
+                            <input type="hidden" name="action" value="update">
+                            <div class="input-group">
+                                <input type="number" name="quantity" class="form-control" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}">
+                                <button type="submit" class="btn btn-outline-primary">Actualizar</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-4">
+                        Precio: ${{ item.product.price }}
+                    </div>
+                    <div class="col-md-2">
+                        <form method="post" action="{% url 'cart:view_cart' %}">
+                            {% csrf_token %}
+                            <input type="hidden" name="cart_item_id" value="{{ item.id }}">
+                            <input type="hidden" name="action" value="delete">
+                            <button type="submit" class="btn btn-danger">Eliminar</button>
+                        </form>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'cart:add_to_cart' %}" class="btn btn-primary mt-3">Añadir más productos</a>
+    </div>
 </body>
 </html>
