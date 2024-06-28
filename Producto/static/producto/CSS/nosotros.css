@@ -54,6 +54,7 @@
     color: #333;
     font-family: "Nunito Sans";
     font-weight: 500;
+    margin-bottom: 1rem; /* Ajusta el margen inferior según sea necesario */
 }
 
 /* tamaño letra del texto p */
@@ -65,7 +66,6 @@
     line-height: 1.5;
     text-align: justify;
     margin-bottom: -10%;
-    
+    margin-bottom: 1.5rem; /* Ajusta el margen inferior según sea necesario */
 } 
-
 
