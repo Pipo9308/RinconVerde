@@ -59,39 +59,6 @@
 </nav>
 <!-- Fin de la barra de navegación -->
 
-  <!-- Carrito de Compras Modal -->
-  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Total</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody id="cartItems">
-              <!-- Items del carrito serán agregados aquí -->
-            </tbody>
-          </table>
-          <p class="text-end"><strong>Total: <span id="cartTotal">0</span></strong></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <a href="carrito.html" class="btn btn-primary">Proceder al Pago</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <h1><img src="{% static "producto/IMG/headers/maceteros.png" %}" alt=". . ." style="max-width: 100%; height: auto;"></h1>
 
   <!-- Inicio Cards -->
@@ -115,9 +82,12 @@
               <!-- Disponibilidad -->
               <p class="card-availability"><strong>Disponibilidad:</strong> 11 Unidades</p>
               <!-- Boton para agregar al carrito -->
-              <div class="text-center">
-                <button class="btn btn-success add-to-cart">Agregar al carrito</button>
-              </div>
+              <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="19">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+            </form>
             </div>
           </div>
         </div>
@@ -140,9 +110,12 @@
               <!-- Disponibilidad -->
               <p class="card-availability"><strong>Disponibilidad:</strong> 9 Unidades</p>
               <!-- Boton para agregar al carrito -->
-              <div class="text-center">
-                <button class="btn btn-success add-to-cart">Agregar al carrito</button>
-              </div>
+              <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="20">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+            </form>
             </div>
           </div>
         </div>
@@ -168,9 +141,12 @@
               <!-- Disponibilidad -->
               <p class="card-availability"><strong>Disponibilidad:</strong> 2 Unidades</p>
               <!-- Boton para agregar al carrito -->
-              <div class="text-center">
-                <button class="btn btn-success add-to-cart">Agregar al carrito</button>
-              </div>
+              <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="21">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+            </form>
             </div>
           </div>
         </div>
@@ -197,7 +173,7 @@
               <p class="card-availability"><strong>Disponibilidad:</strong> Sin Unidades</p>
               <!-- Boton -->
               <div class="text-center">
-                <button class="btn btn-danger mt-auto">Agotado</button>
+                <button class="btn btn-danger">Agotado</button>
               </div>
             </div>
           </div>
@@ -221,9 +197,12 @@
               <!-- Disponibilidad -->
               <p class="card-availability"><strong>Disponibilidad:</strong> 12 Unidades</p>
               <!-- Boton para agregar al carrito -->
-              <div class="text-center">
-                <button class="btn btn-success add-to-cart">Agregar al carrito</button>
-              </div>
+              <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="23">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+            </form>
             </div>
           </div>
         </div>
@@ -246,9 +225,12 @@
               <!-- Disponibilidad -->
               <p class="card-availability"><strong>Disponibilidad:</strong> 5 Unidades</p>
               <!-- Boton para agregar al carrito -->
-              <div class="text-center">
-                <button class="btn btn-success add-to-cart">Agregar al carrito</button>
-              </div>
+              <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="24">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+            </form>
             </div>
           </div>
         </div>

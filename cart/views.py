@@ -1,56 +1,56 @@
-# cart/views.py
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import redirect, get_object_or_404, render
 from django.contrib import messages
 from .models import Product, CartItem
-from .forms import AddToCartForm
+
+def payment_view(request):
+    # Lógica para procesar el pago
+    return render(request, 'cart/payment.html')
 
 def add_to_cart(request):
     if request.method == 'POST':
-        form = AddToCartForm(request.POST)
-        if form.is_valid():
-            product_id = form.cleaned_data['product_id']
-            quantity = form.cleaned_data['quantity']
-            
-            try:
-                product = Product.objects.get(id=product_id)
-            except Product.DoesNotExist:
-                messages.error(request, "Invalid product.")
-                return redirect('cart:add_to_cart')
-            
-            if quantity > product.stock:
-                messages.error(request, f"Only {product.stock} units available in stock.")
-                return redirect('cart:add_to_cart')
-            
-            # Recuperar o crear la sesión
-            session_key = request.session.session_key
-            if not session_key:
-                request.session.create()
-                session_key = request.session.session_key
-            
-            # Verificar si ya existe un item en el carrito para este producto y sesión
-            cart_item, created = CartItem.objects.get_or_create(product=product, session_key=session_key)
-            
-            if not created:
-                # Si el item ya existe, actualizamos la cantidad
-                cart_item.quantity += quantity
-            else:
-                # Si es un nuevo item, establecemos la cantidad
-                cart_item.quantity = quantity
-            
-            # Verificar si la cantidad total excede el stock disponible
-            if cart_item.quantity > product.stock:
-                messages.error(request, f"Only {product.stock} units available in stock.")
-                return redirect('cart:add_to_cart')
-            
-            # Guardar el item del carrito actualizado
-            cart_item.save()
-            
-            return redirect('cart:view_cart')
-    else:
-        form = AddToCartForm()
+        product_id = request.POST.get('product_id')
+        quantity = int(request.POST.get('quantity', 1))
+        
+        try:
+            product = Product.objects.get(id=product_id)
+        except Product.DoesNotExist:
+            messages.error(request, "Invalid product.")
+            return redirect('cart:view_cart')  # Cambia 'producto:index' por la URL de la página de productos en 'producto'
 
-    products = Product.objects.all()
-    return render(request, 'cart/add_to_cart.html', {'form': form, 'products': products})
+        if quantity > product.stock:
+            messages.error(request, f"Only {product.stock} units available in stock.")
+            return redirect('cart:view_cart')  # Cambia 'producto:index' por la URL de la página de productos en 'producto'
+        
+        # Recuperar o crear la sesión
+        session_key = request.session.session_key
+        if not session_key:
+            request.session.create()
+            session_key = request.session.session_key
+        
+        # Verificar si ya existe un item en el carrito para este producto y sesión
+        cart_item, created = CartItem.objects.get_or_create(product=product, session_key=session_key)
+        
+        if not created:
+            # Si el item ya existe, actualizamos la cantidad
+            cart_item.quantity += quantity
+        else:
+            # Si es un nuevo item, establecemos la cantidad
+            cart_item.quantity = quantity
+        
+        # Verificar si la cantidad total excede el stock disponible
+        if cart_item.quantity > product.stock:
+            messages.error(request, f"Only {product.stock} units available in stock.")
+            return redirect('cart:view_cart')  # Cambia 'producto:index' por la URL de la página de productos en 'producto'
+        
+        # Guardar el item del carrito actualizado
+        cart_item.save()
+        
+        messages.success(request, f"{product.name} added to cart.")
+        return redirect('cart:view_cart')  # Redirige a la vista 'view_cart' del carrito
+        
+    else:
+        return redirect('cart:view_cart')  # Cambia 'producto:index' por la URL de la página de productos en 'producto'
+
 
 def view_cart(request):
     session_key = request.session.session_key

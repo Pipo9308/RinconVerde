@@ -59,71 +59,42 @@
   </div>
 </nav>
 <!-- Fin de la barra de navegación -->
-
-  <!-- Carrito de Compras Modal -->
-  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Total</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody id="cartItems">
-              <!-- Items del carrito serán agregados aquí -->
-            </tbody>
-          </table>
-          <p class="text-end"><strong>Total: <span id="cartTotal">0</span></strong></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <a href="carrito.html" class="btn btn-primary">Proceder al Pago</a>
-        </div>
-      </div>
-    </div>
-  </div>
   
   <h1><img src="{% static "producto/IMG/headers/arbustos.png" %}" alt=". . ." style="max-width: 100%; height: auto;"></h1>
 
    <!--  Inicio Cards -->
    <div class="container mt-5">
     <div class="row d-flex align-items-stretch">
-        <!-- Primera card -->
-        <div class="col-md-4">
-            <!-- Card -->
-            <div class="card h-100">
-                <!-- Imagen -->
-                <img src="{% static 'producto/IMG/arbustos/Arbusto1.jpg' %}" class="card-img-top" alt="Imagen del producto">
-               
-                <div class="card-body d-flex flex-column">
-                    <!-- Nombre -->
-                    <h5 class="card-title">Pitosporo Tobira Enano - Pittosporum Tobira Nana</h5>
-                    <!-- Descripcion -->
-                    <p class="card-text">Arbusto Pequeño De Forma Baja Y Redondeada Tiene Hojas Verdes Brillantes Y Flores Blancas Con Olor A Azahar.</p>
-                    <!-- Contenedor -->
-                    <div class="mt-auto">
-                      <!-- Precio -->
-                      <p class="card-price">Precio: $5.600</p>
-                      <!-- Disponibilidad -->
-                      <p class="card-availability"><strong>Disponibilidad:</strong> 14 Unidades</p>
-                      <!-- Boton para agregar al carrito -->
-                      <div class="text-center">
-                        <button class="btn btn-success add-to-cart">Agregar al carrito</button>
-                      </div>
-                    </div>
-                </div>
+  <!-- Primera card -->
+  <div class="col-md-4">
+    <!-- Card -->
+    <div class="card h-100">
+        <!-- Imagen -->
+        <img src="{% static 'producto/IMG/arbustos/Arbusto1.jpg' %}" class="card-img-top" alt="Imagen del producto">
+      
+        <div class="card-body d-flex flex-column">
+            <!-- Nombre -->
+            <h5 class="card-title">Pitosporo Tobira Enano - Pittosporum Tobira Nana</h5>
+            <!-- Descripcion -->
+            <p class="card-text">Arbusto Pequeño De Forma Baja Y Redondeada Tiene Hojas Verdes Brillantes Y Flores Blancas Con Olor A Azahar.</p>
+            <!-- Contenedor -->
+            <div class="mt-auto">
+                <!-- Precio -->
+                <p class="card-price">Precio: $5.600</p>
+                <!-- Disponibilidad -->
+                <p class="card-availability"><strong>Disponibilidad:</strong> 14 Unidades</p>
+                <!-- Formulario para agregar al carrito -->
+                <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="7">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+                </form>
             </div>
         </div>
+    </div>
+  </div>
+
         <!-- Segunda card -->
         <div class="col-md-4">
             <!-- Card -->
@@ -170,9 +141,12 @@
                   <!-- Disponibilidad -->
                   <p class="card-availability"><strong>Disponibilidad:</strong> 1 Unidad</p>
                   <!-- Boton para agregar al carrito -->
-                  <div class="text-center">
-                    <button class="btn btn-success add-to-cart">Agregar al carrito</button>
-                  </div>
+                  <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="9">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+                </form>
                 </div>
             </div>
         </div>
@@ -199,9 +173,12 @@
                   <!-- Disponibilidad -->
                   <p class="card-availability"><strong>Disponibilidad:</strong> 16 Unidades</p>
                   <!-- Boton para agregar al carrito -->
-                  <div class="text-center">
-                    <button class="btn btn-success add-to-cart">Agregar al carrito</button>
-                  </div>
+                  <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="10">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+                </form>
                 </div>
             </div>
         </div>
@@ -224,9 +201,12 @@
                   <!-- Disponibilidad -->
                   <p class="card-availability"><strong>Disponibilidad:</strong> 7 Unidades</p>
                   <!-- Boton para agregar al carrito -->
-                  <div class="text-center">
-                    <button class="btn btn-success add-to-cart">Agregar al carrito</button>
-                  </div>
+                  <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="11">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+                </form>
                 </div>
             </div>
         </div>
@@ -249,9 +229,12 @@
                   <!-- Disponibilidad -->
                   <p class="card-availability"><strong>Disponibilidad:</strong> 6 Unidades</p>
                   <!-- Boton para agregar al carrito -->
-                  <div class="text-center">
-                    <button class="btn btn-success add-to-cart">Agregar al carrito</button>
-                  </div>
+                  <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="12">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+                </form>
                 </div>
             </div>
         </div>

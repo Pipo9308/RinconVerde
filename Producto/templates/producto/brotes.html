@@ -60,39 +60,6 @@
 </nav>
 <!-- Fin de la barra de navegación -->
  
-  <!-- Carrito de Compras Modal -->
-  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Total</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody id="cartItems">
-              <!-- Items del carrito serán agregados aquí -->
-            </tbody>
-          </table>
-          <p class="text-end"><strong>Total: <span id="cartTotal">0</span></strong></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <a href="carrito.html" class="btn btn-primary">Proceder al Pago</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
     <!-- Productos -->
     <h1><img src="{% static "producto/IMG/headers/brotes.png" %}" alt=". . ." style="max-width: 100%; height: auto;"></h1>
     <!-- Cards -->
@@ -116,9 +83,12 @@
                           <!-- Disponibilidad -->
                           <p class="card-availability"><strong>Disponibilidad:</strong> 10 Unidades</p>
                           <!-- Boton para agregar al carrito -->
-                          <div class="text-center">
-                            <button class="btn btn-success add-to-cart">Agregar al carrito</button>
-                          </div>
+                          <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                            {% csrf_token %}
+                            <input type="hidden" name="product_id" value="2">
+                            <input type="hidden" name="quantity" value="1">
+                            <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -144,9 +114,12 @@
                           <!-- Disponibilidad -->
                           <p class="card-availability"><strong>Disponibilidad:</strong> 2 Unidades</p>
                           <!-- Boton para agregar al carrito -->
-                          <div class="text-center">
-                            <button class="btn btn-success add-to-cart">Agregar al carrito</button>
-                          </div>
+                          <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                            {% csrf_token %}
+                            <input type="hidden" name="product_id" value="1">
+                            <input type="hidden" name="quantity" value="1">
+                            <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -169,9 +142,12 @@
                       <!-- Disponibilidad -->
                       <p class="card-availability"><strong>Disponibilidad:</strong> 15 Unidades</p>
                       <!-- Boton para agregar al carrito -->
-                      <div class="text-center">
-                        <button class="btn btn-success add-to-cart">Agregar al carrito</button>
-                      </div>
+                      <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="3">
+                        <input type="hidden" name="quantity" value="1">
+                        <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -198,9 +174,12 @@
                       <!-- Disponibilidad -->
                       <p class="card-availability"><strong>Disponibilidad:</strong> 7 Unidades</p>
                       <!-- Boton para agregar al carrito -->
-                      <div class="text-center">
-                        <button class="btn btn-success add-to-cart">Agregar al carrito</button>
-                      </div>
+                      <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="4">
+                        <input type="hidden" name="quantity" value="1">
+                        <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+                    </form>
                     </div>
                 </div>
             </div>
@@ -248,9 +227,12 @@
                       <!-- Disponibilidad -->
                       <p class="card-availability"><strong>Disponibilidad:</strong> 11 Unidades</p>
                       <!-- Boton para agregar al carrito -->
-                      <div class="text-center">
-                        <button class="btn btn-success add-to-cart">Agregar al carrito</button>
-                      </div>
+                      <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="6">
+                        <input type="hidden" name="quantity" value="1">
+                        <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+                    </form>
                     </div>
                 </div>
             </div>

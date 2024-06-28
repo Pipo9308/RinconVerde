@@ -62,45 +62,7 @@
   </div>
 </nav>
 <!-- Fin de la barra de navegación -->
-
-<!-- Carrito -->
-<div class="container mt-5">
-    <h1 class="mb-4">Carrito de compras</h1>
-    <ul class="list-group">
-        {% for item in cart_items %}
-        <li class="list-group-item">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <strong>{{ item.product.name }}</strong><br>
-                    Cantidad:
-                    <form method="post" action="{% url 'cart:view_cart' %}">
-                        {% csrf_token %}
-                        <input type="hidden" name="cart_item_id" value="{{ item.id }}">
-                        <input type="hidden" name="action" value="update">
-                        <div class="input-group">
-                            <input type="number" name="quantity" class="form-control" value="{{ item.quantity }}" min="1" max="{{ item.product.stock }}">
-                            <button type="submit" class="btn btn-outline-primary">Actualizar</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="col-md-4">
-                    Total: ${{ item.total_price|floatformat:"2" }}
-                </div>
-                <div class="col-md-2">
-                    <form method="post" action="{% url 'cart:view_cart' %}">
-                        {% csrf_token %}
-                        <input type="hidden" name="cart_item_id" value="{{ item.id }}">
-                        <input type="hidden" name="action" value="delete">
-                        <button type="submit" class="btn btn-danger">Eliminar</button>
-                    </form>
-                </div>
-            </div>
-        </li>
-        {% endfor %}
-    </ul>
-    <a href="{% url 'cart:payment' %}" class="btn btn-success mt-auto">Proceder al Pago</a>
-</div>
-<!-- Fin Carrito-->
+ 
 
   <!-- Footer -->
   <footer class="bg-success text-light py-2">
@@ -136,4 +98,3 @@
   <script src="script.js"></script>
 </body>
 </html>
-
