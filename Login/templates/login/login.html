@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="{% static 'CSS/login.css' %}" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="login.js"></script>
+    <title>Bienvenido / Login</title>
+    
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <img src="{% static "producto/IMG/Helen (2).png" %}" alt="" style="width: 100px;">
+        <a class="nav-link text-white" href="{% url 'index' %}"><strong>Inicio</strong></a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <span class="navbar-text text-white ms-auto" id="userIcon">
+                <i class="fas fa-user"></i> <span id="usernameDisplay"></span>         
+            </span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <form>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label"><strong> Correo electrónico</strong></label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">Nunca compartiremos su Correo electrónico con nadie más.</div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label"><strong>Contraseña</strong></label>
+                <input type="password" class="form-control" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1"><strong>Recordar Contraseña</strong></label>
+            </div>
+            <button type="submit" class="btn btn-primary">Acceso</button>
+        </form>
+    </div>
+    
+    <footer class="bg-success text-light py-2">
+        <div class="container2">
+            <div class="row">
+                <div class="col-md-6 mt-2">
+                    <h5>Contacto</h5>
+                    <ul class="list-unstyled text-light">
+                        <li><i class="fa-solid fa-house me-2"></i>Dirección: Avenida Siempreviva #742, Springfield</i></li>
+                        <li><i class="fa-solid fa-phone me-2"></i>Teléfono: +123 456 789 </i></li>
+                        <li><i class="fa-solid fa-envelope me-2"></i>Correo Electrónico: info@rinconverde.com</i></li>
+                        <li><i class="fa-solid fa-circle-question me-2"></i></i>Ayuda</i></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 mt-2">
+                    <h5>Redes Sociales</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="https://www.facebook.com" class="text-light"><i
+                                    class="fab fa-facebook-f me-2"></i>Facebook</a></li>
+                        <li><a href="https://www.x.com" class="text-light"><i
+                                    class="fab fa-twitter me-2"></i>Twitter</a></li>
+                        <li><a href="https://www.instagram.com" class="text-light"><i
+                                    class="fab fa-instagram me-2"></i>Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

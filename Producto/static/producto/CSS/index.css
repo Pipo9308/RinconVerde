@@ -1,0 +1,49 @@
+   /* Estilo local para cards - Evita que se use el de style.css */
+   .card {
+    max-height: 400px;
+    max-width: 400px;
+  }
+
+  .card-price {
+    font-weight: bold;
+    
+}
+
+.discount-price {
+
+    color: red;
+    margin-left: 30px;
+}
+
+.discount-text {
+    position: absolute;
+    top: 120px;
+    right: 10px;
+    background-color: #ff0000; /* Color de fondo del texto */
+    color: #ffffff; /* Color del texto */
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.discount-image {
+    
+    position: relative;
+    
+}
+
+.btn:hover {
+  background-color: #9DDE8B;
+  border-color: #9DDE8B; 
+}
+
+.h1 img {
+  width: auto; 
+  height: auto; 
+  max-width: 100%; 
+  max-height: 100%; 
+}
+
+
+

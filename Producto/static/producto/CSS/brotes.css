@@ -1,0 +1,69 @@
+.card-price {
+    font-weight: bold;
+    
+}
+
+.discount-price {
+
+    color: red;
+    margin-left: 30px;
+}
+
+.discount-text {
+    position: absolute;
+    top: 230px;
+    right: 10px;
+    background-color: #ff0000; /* Color de fondo del texto */
+    color: #ffffff; /* Color del texto */
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.discount-image {
+    
+    position: relative;
+    
+}
+
+.card-title {
+    font-weight: bold;
+    
+}
+
+.h1 img {
+    width: auto; 
+    height: auto; 
+    max-width: 100%; 
+    max-height: 100%; 
+}
+.card-img-top:hover {
+    transform: scale(1.1); /* Ajusta el valor según sea necesario */
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+}
+
+.container {
+    margin-top: 80px; /* Ajusta este valor según sea necesario */
+}
+
+.card {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+    
+}
+
+.card:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-add-to-cart-btn {
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 3px 8px #0008;
+}
+
+.card-add-to-cart-btn:hover {
+    background-color: #28a745; /* Cambia el color a verde cuando se pasa el ratón por encima */
+    border-color: #28a745; /* Cambia el color del borde a verde */
+
+}
