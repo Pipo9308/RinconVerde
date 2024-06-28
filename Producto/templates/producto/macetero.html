@@ -50,8 +50,10 @@
     <a href="{% url "login" %}" class="navbar-text text-white ms-auto me-3" id="userIcon">
       <i class="fas fa-user"></i> <span id="usernameDisplay"></span>
     </a>
-    <span class="navbar-text text-white me-3" id="cartIcon" data-bs-toggle="modal" data-bs-target="#cartModal">
-      <i class="fa fa-shopping-cart"></i>
+    <span class="navbar-text text-white me-3" id="cartIcon" data-bs-toggle="modal" style="cursor: pointer;">
+      <a href="{% url 'cart:view_cart' %}" class="text-decoration-none text-white">
+        <i class="fa fa-shopping-cart"></i>
+      </a>
     </span>
   </div>
 </nav>
