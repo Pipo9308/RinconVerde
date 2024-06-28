@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   
+  {% load static %}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="{% static 'producto/CSS/style.css' %}" rel="stylesheet">
+    <link href="{% static 'producto/CSS/index.css' %}" rel="stylesheet">
+    
+    <script src="{% static 'login.js' %}"></script>
+  <title>Rinconcito Verde</title>
+</head>
+
+<body>
+
+<!-- Inicio de la barra de navegación -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <!-- Este es el logo o nombre de la página web -->
+  <img src="{% static "producto/IMG/Helen (2).png" %}" alt="" style="width: 100px;">
+  <a class="navbar-brand text-white" href="#"><strong>Rincón Verde</strong></a>
+  <!-- Este botón aparece cuando la pantalla es pequeña (responsive design) -->
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- Aquí están los enlaces de la barra de navegación -->
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav me-auto">
+      <!-- Cada 'li' es un enlace en la barra de navegación -->
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url "index" %}"><strong>Inicio</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url "brotes" %}"><strong>Brotes</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url "arbustos" %}"><strong>Arbustos</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url "sustrato" %}"><strong>Sustratos</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url "macetero" %}"><strong>Maceteros</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url "nosotros" %}"><strong>Nosotros</strong></a>
+      </li>
+    </ul>
+    <!-- Iconos de usuario y carrito alineados a la derecha -->
+    <a href="{% url "login" %}" class="navbar-text text-white ms-auto me-3" id="userIcon">
+      <i class="fas fa-user"></i> <span id="usernameDisplay"></span>
+    </a>
+    <span class="navbar-text text-white me-3" id="cartIcon" data-bs-toggle="modal" data-bs-target="#cartModal">
+      <i class="fa fa-shopping-cart"></i>
+    </span>
+  </div>
+</nav>
+<!-- Fin de la barra de navegación -->
+
+
+  
+  <h1><img src="{% static 'producto/IMG/headers/titulo.png' %}" alt=". . ." style="max-width: 100%; height: auto;"></h1>
+  
+  <!-- Carrito de Compras Modal -->
+  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody id="cartItems">
+              <!-- Items del carrito serán agregados aquí -->
+            </tbody>
+          </table>
+          <p class="text-end"><strong>Total: <span id="cartTotal">0</span></strong></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <a href="{% url 'cart' %}" class="btn btn-primary">Proceder al Pago</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Carrusel -->
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'producto/IMG/carousel/flores1.jpg' %}" class="d-block w-100" alt="Slide 1">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'producto/IMG/carousel/flores2.jpg' %}" class="d-block w-100" alt="Slide 2">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'producto/IMG/carousel/flores3.jpg' %}" class="d-block w-100" alt="Slide 3">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'producto/IMG/carousel/flores4.jpg' %}" class="d-block w-100" alt="Slide 4">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<!-- Fin Carrusel -->
+
+  
+  <!-- Productos destacados -->
+  <h1>Productos Destacados</h1>
+  <div class="container mt-3">
+    <div class="row">
+      <!-- Primera card -->
+      <div class="col-md-3">
+        <!-- Card -->
+        <div class="card h-100 d-flex flex-column">
+          <!-- Imagen -->
+          <img src="{% static 'producto/IMG/plantas/echinocactus.jpg' %}" class="card-img-top" alt="Imagen del producto"
+            style="height: 200px; object-fit: cover;">
+          <div class="discount-image">
+            <p class="discount-text">20%</p>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <!-- Nombre -->
+            <h5 class="card-title text-center">Asiento de Suegra (Echinocactus Grusonii)</h5>
+            <!-- Precio -->
+            <p class="card-price"><del>Precio: $22.000</del> <span class="discount-price">Ahora: $17.600</span></p>
+            <!-- Boton para agregar al carrito -->
+            <div class="mt-auto text-center">
+              <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Segunda card -->
+      <div class="col-md-3">
+        <!-- Card -->
+        <div class="card h-100 d-flex flex-column">
+          <!-- Imagen -->
+          <img src="{% static 'producto/IMG/sustratos/sustrato-almacigos-22-litros-34028549505206.webp' %}" class="card-img-top"
+            alt="Imagen del producto" style="height: 200px; object-fit: cover;">
+          <div class="discount-image">
+            <p class="discount-text">10%</p>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <!-- Nombre -->
+            <h5 class="card-title text-center">Sustrato Almácigos | 10 Litros</h5>
+            <!-- Precio -->
+            <p class="card-price"><del>Precio: $6.990</del> <span class="discount-price">Ahora: $6.290</span></p>
+            <!-- Boton para agregar al carrito -->
+            <div class="mt-auto text-center">
+              <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Tercera card -->
+      <div class="col-md-3">
+        <!-- Card -->
+        <div class="card h-100 d-flex flex-column">
+          <!-- Imagen -->
+          <img src="{% static 'producto/IMG/arbustos/Arbusto3.webp' %}" class="card-img-top" alt="Imagen del producto"
+            style="height: 200px; object-fit: cover;">
+          <div class="discount-image">
+            <p class="discount-text">15%</p>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <!-- Nombre -->
+            <h5 class="card-title text-center">Lavanda Francesa - Lavandula Dentata</h5>
+            <!-- Precio -->
+            <p class="card-price"><del>Precio: $6.500</del> <span class="discount-price">Ahora: $5.525</span></p>
+            <!-- Boton para agregar al carrito -->
+            <div class="mt-auto text-center">
+              <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Cuarta card -->
+      <div class="col-md-3">
+        <!-- Card -->
+        <div class="card h-100 d-flex flex-column">
+          <!-- Imagen -->
+          <img src="{% static 'producto/IMG/maceteros/919729-firenze3.jpg' %}" class="card-img-top" alt="Imagen del producto"
+            style="height: 200px; object-fit: cover;">
+          <div class="discount-image">
+            <p class="discount-text">5%</p>
+          </div>
+          <div class="card-body d-flex flex-column">
+            <!-- Nombre -->
+            <h5 class="card-title text-center">Macetero Firenze</h5>
+            <!-- Precio -->
+            <p class="card-price"><del>Precio: $20.900</del> <span class="discount-price">Ahora: $19.855</span></p>
+            <!-- Boton para agregar al carrito -->
+            <div class="mt-auto text-center">
+              <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Repite este patrón para las demás tarjetas -->
+  
+  <!-- Footer -->
+ <footer class="bg-success text-light py-2">
+  <div class="container2">
+      <div class="row">
+          <div class="col-md-6 mt-2">
+              <h5>Contacto</h5>
+              <ul class="list-unstyled text-light">
+                  <li><i class="fa-solid fa-house me-2"></i>Dirección: Avenida Siempreviva #742, Springfield</i></li>
+                  <li><i class="fa-solid fa-phone me-2"></i>Teléfono: +123 456 789 </i></li>
+                  <li><i class="fa-solid fa-envelope me-2"></i>Correo Electrónico: info@rinconverde.com</i></li>
+                  <li><i class="fa-solid fa-circle-question me-2"></i></i>Ayuda</i></li>
+              </ul>
+          </div>
+          <div class="col-md-6 mt-2">
+              <h5>Redes Sociales</h5>
+              <ul class="list-unstyled">
+                  <li><a href="https://www.facebook.com" class="text-light"><i
+                              class="fab fa-facebook-f me-2"></i>Facebook</a></li>
+                  <li><a href="https://www.x.com" class="text-light"><i
+                              class="fab fa-twitter me-2"></i>Twitter</a></li>
+                  <li><a href="https://www.instagram.com" class="text-light"><i
+                              class="fab fa-instagram me-2"></i>Instagram</a></li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</footer>
+  
+<!-- Bootstrap Bundle (JS incluido Popper.js) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+
+</body>
+
+</html>
