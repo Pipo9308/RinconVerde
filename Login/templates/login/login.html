@@ -63,28 +63,29 @@
   </nav>
   <!-- Fin de la barra de navegación -->
 
-  <div class="container">
-    <form method="POST">
+  <div class="center-content">
+    <h2>Iniciar Sesión</h2>
+    <form method="post" class="login-form my-4">
         {% csrf_token %}
-        <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label"><strong>Correo electrónico</strong></label>
-            <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">Nunca compartiremos su correo electrónico con nadie más.</div>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label"><strong>Contraseña</strong></label>
-            <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-        </div>
-        {% if messages %}
-        <div class="alert alert-danger" role="alert">
-            {% for message in messages %}
-            {{ message }}
-            {% endfor %}
-        </div>
-        {% endif %}
-        <button type="submit" class="btn btn-primary">Acceder</button>
+        {% for field in form %}
+            <div class="mb-3">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
     </form>
     <a href="{% url 'registro' %}" class="btn btn-primary btn-sm">Crear Usuario</a>
+    {% if messages %}
+        <ul class="list-unstyled">
+            {% for message in messages %}
+                <li class="text-danger">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 </div>
     
     <footer class="bg-success text-light py-2">

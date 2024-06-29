@@ -15,3 +15,10 @@ class RegistroForm(forms.ModelForm):
 
         if not terminos:
             self.add_error('terminos', 'Debes aceptar los términos para registrarte.')
+            
+ 
+
+
+class LoginForm(forms.Form):
+    username = forms.CharField()
+    password = forms.CharField(widget=forms.PasswordInput)           

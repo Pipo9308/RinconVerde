@@ -1,9 +1,8 @@
 from django.shortcuts import render, redirect
-
 from .forms import RegistroForm
 from django.contrib.auth import authenticate, login
-from .models import Usuario
 from django.contrib import messages
+from .forms import LoginForm
 
 def index(request):
     return render(request, 'producto/index.html')
@@ -23,8 +22,7 @@ def sustrato(request):
 def macetero(request):
     return render(request, 'producto/macetero.html')
 
-def login(request):
-    return render(request, 'login/login.html')
+
 
 def cart_view(request):
     # Aquí va la lógica de tu vista para el carrito de compras
@@ -60,17 +58,16 @@ def registro_view(request):
 
 def login_view(request):
     if request.method == 'POST':
-        emails = request.POST.get('email')
-        passwords = request.POST.get('password')
-
-        
-        user = authenticate(request, username=emails, password=passwords)
-
-        if user is not None:
-            login(request, user)
-            return redirect('index')  # Redirige a la página de inicio después del inicio de sesión exitoso
-        else:
-            messages.error(request, 'Correo electrónico o contraseña incorrectos.')
-
-    # Si es GET o si hay errores de autenticación, renderiza nuevamente el formulario de inicio de sesión
-    return render(request, 'login/login.html')
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('index')  # Redirige a la página de inicio u otra página
+            else:
+                messages.error(request, 'Nombre de usuario o contraseña incorrectos')
+    else:
+        form = LoginForm()
+    return render(request, 'login/login.html', {'form': form})
