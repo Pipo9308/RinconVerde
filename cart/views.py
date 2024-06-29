@@ -2,6 +2,17 @@ from django.shortcuts import redirect, get_object_or_404, render
 from django.contrib import messages
 from .models import Product, CartItem, Boleta, BoletaDetalle
 
+def view_invoices(request):
+    session_key = request.session.session_key
+    
+    if not session_key:
+        return redirect('index')  # Manejar el caso sin sesión de manera adecuada
+    
+    # Obtener todas las boletas asociadas a la sesión actual
+    boletas = Boleta.objects.filter(detalles__session_key=session_key).distinct()
+    
+    return render(request, 'cart/view_invoices.html', {'boletas': boletas})
+
 def payment_view(request):
     session_key = request.session.session_key
     
@@ -37,7 +48,7 @@ def payment_view(request):
         CartItem.objects.filter(session_key=session_key).delete()
         
         messages.success(request, 'Compra realizada con éxito. Gracias por su compra!')
-        return redirect('cart:view_cart')  # Redirigir a la vista del carrito o a donde desees
+        return redirect('cart:view_invoices')  # Redirigir a la vista del carrito o a donde desees
     
     return render(request, 'cart/payment.html', {'cart_items': cart_items, 'total_price': total_price})
 
