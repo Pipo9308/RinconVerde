@@ -1,10 +1,45 @@
 from django.shortcuts import redirect, get_object_or_404, render
 from django.contrib import messages
-from .models import Product, CartItem
+from .models import Product, CartItem, Boleta, BoletaDetalle
 
 def payment_view(request):
-    # Lógica para procesar el pago
-    return render(request, 'cart/payment.html')
+    session_key = request.session.session_key
+    
+    if not session_key:
+        return redirect('cart:view_cart')  # Redirige si no hay sesión activa
+    
+    cart_items = CartItem.objects.filter(session_key=session_key)
+    total_price = sum(item.total_price() for item in cart_items)
+    
+    if request.method == 'POST':
+        nombre = request.POST.get('nombre')
+        direccion = request.POST.get('direccion')
+        telefono = request.POST.get('telefono')
+        
+        # Crear la boleta
+        boleta = Boleta.objects.create(
+            nombre=nombre,
+            direccion=direccion,
+            telefono=telefono,
+            precio_total=total_price,
+        )
+        
+        # Agregar productos y cantidades al detalle de la boleta
+        for cart_item in cart_items:
+            boleta_detalle = BoletaDetalle.objects.create(
+                boleta=boleta,
+                product=cart_item.product,
+                cantidad=cart_item.quantity,
+                session_key = cart_item.session_key
+            )
+        
+        # Limpiar el carrito después de procesar la compra
+        CartItem.objects.filter(session_key=session_key).delete()
+        
+        messages.success(request, 'Compra realizada con éxito. Gracias por su compra!')
+        return redirect('cart:view_cart')  # Redirigir a la vista del carrito o a donde desees
+    
+    return render(request, 'cart/payment.html', {'cart_items': cart_items, 'total_price': total_price})
 
 def add_to_cart(request):
     if request.method == 'POST':

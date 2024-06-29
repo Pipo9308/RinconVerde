@@ -63,6 +63,37 @@
 </nav>
 <!-- Fin de la barra de navegación -->
  
+<div class="container mt-5">
+  <h1 class="mb-4">Proceder al Pago</h1>
+  
+  <!-- Mostrar los productos del carrito -->
+  <ul class="list-group mb-4">
+      {% for item in cart_items %}
+      <li class="list-group-item">
+          <strong>{{ item.product.name }}</strong> - Cantidad: {{ item.quantity }} - Total: ${{ item.total_price|floatformat:"2" }}
+      </li>
+      {% endfor %}
+      <li class="list-group-item">Total: ${{ total_price }}</li>
+  </ul>
+  
+  <!-- Formulario para ingresar nombre, dirección y teléfono -->
+  <form method="post">
+      {% csrf_token %}
+      <div class="mb-3">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" name="nombre" required>
+      </div>
+      <div class="mb-3">
+          <label for="direccion" class="form-label">Dirección</label>
+          <input type="text" class="form-control" id="direccion" name="direccion" required>
+      </div>
+      <div class="mb-3">
+          <label for="telefono" class="form-label">Teléfono</label>
+          <input type="tel" class="form-control" id="telefono" name="telefono" required>
+      </div>
+      <button type="submit" class="btn btn-success">Proceder</button>
+  </form>
+</div>
 
   <!-- Footer -->
   <footer class="bg-success text-light py-2">
