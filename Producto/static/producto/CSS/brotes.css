@@ -67,3 +67,26 @@
     border-color: #28a745; /* Cambia el color del borde a verde */
 
 }
+
+/* Justificar la descripción de los productos */
+.col-md-4 .card-text{
+    text-align: justify;
+} 
+
+/* sombreado del span  */
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    color: #333;
+    padding: 1rem;
+    margin: 2rem 0;
+    background:#a9d39d7d;
+}
+
+/* color titulo span  */
+.heading span{
+    color: rgba(61, 149, 78, 0.757);
+    font-family: "Nunito Sans";
+    font-weight: 550;
+    text-shadow: 2px 2px 3px rgb(91, 103, 89);
+}

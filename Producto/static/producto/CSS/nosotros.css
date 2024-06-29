@@ -13,6 +13,7 @@
     color: rgba(61, 149, 78, 0.757);
     font-family: "Nunito Sans";
     font-weight: 550;
+    text-shadow: 2px 2px 3px rgb(91, 103, 89);
 }
 
 /* ordena la frase del gif */
@@ -54,6 +55,7 @@
     color: #333;
     font-family: "Nunito Sans";
     font-weight: 500;
+    text-shadow: 1px 0px 1px black;
     margin-bottom: 1rem; /* Ajusta el margen inferior según sea necesario */
 }
 
@@ -65,7 +67,6 @@
     padding-top: 0.6rem;
     line-height: 1.5;
     text-align: justify;
-    margin-bottom: -10%;
-    margin-bottom: 1.5rem; /* Ajusta el margen inferior según sea necesario */
+    margin-bottom: -10%; /* Ajusta el margen inferior según sea necesario */
 } 
 

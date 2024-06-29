@@ -17,10 +17,24 @@
 }
 
 /* Estilo del h1 */
-h1 {
+/* sombreado del span  */
+.heading{
     text-align: center;
-    padding-top: 30px;
+    font-size: 4rem;
+    color: #333;
+    padding: 1rem;
+    margin: 2rem 0;
+    background:#a9d39d7d;
 }
+
+/* color titulo span  */
+.heading span{
+    color: rgba(61, 149, 78, 0.757);
+    font-family: "Nunito Sans";
+    font-weight: 550;
+    text-shadow: 2px 2px 3px rgb(91, 103, 89);
+}
+
 
 h1 img {
     height: 300px;
@@ -86,3 +100,8 @@ body {
     margin-left: 450px;
 
 }
+
+.col-md-4 .card-text{
+    text-align: justify;
+}
+

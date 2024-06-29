@@ -12,6 +12,16 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 
+<<<<<<< Updated upstream
+=======
+
+
+
+# Configuración de sesión
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Backend de sesión (almacenamiento en base de datos)
+SESSION_COOKIE_NAME = 'sessionid'  # Nombre de la cookie de sesión
+SESSION_COOKIE_AGE = 86400  # Tiempo de vida de la cookie de sesión en segundos (por ejemplo, 1 día)
+>>>>>>> Stashed changes
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
