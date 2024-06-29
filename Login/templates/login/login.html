@@ -10,41 +10,83 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="{% static 'CSS/login.css' %}" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="login.js"></script>
+    
     <title>Bienvenido / Login</title>
     
 </head>
 
 <body>
     
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <img src="{% static "producto/IMG/Helen (2).png" %}" alt="" style="width: 100px;">
-        <a class="nav-link text-white" href="{% url 'index' %}"><strong>Inicio</strong></a>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <span class="navbar-text text-white ms-auto" id="userIcon">
-                <i class="fas fa-user"></i> <span id="usernameDisplay"></span>         
-            </span>
-        </div>
-    </nav>
-
-    <div class="container">
-        <form>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label"><strong> Correo electrónico</strong></label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                <div id="emailHelp" class="form-text">Nunca compartiremos su Correo electrónico con nadie más.</div>
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label"><strong>Contraseña</strong></label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
-            </div>
-            <div class="mb-3 form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1"><strong>Recordar Contraseña</strong></label>
-            </div>
-            <button type="submit" class="btn btn-primary">Acceso</button>
-        </form>
+    <!-- Inicio de la barra de navegación -->
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <!-- Este es el logo o nombre de la página web -->
+    <img src="{% static "producto/IMG/Helen (2).png" %}" alt="" style="width: 100px;">
+    <a class="navbar-brand text-white" href="#"><strong>Rincón Verde</strong></a>
+    <!-- Este botón aparece cuando la pantalla es pequeña (responsive design) -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- Aquí están los enlaces de la barra de navegación -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
+        <!-- Cada 'li' es un enlace en la barra de navegación -->
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url "index" %}"><strong>Inicio</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url "brotes" %}"><strong>Brotes</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url "arbustos" %}"><strong>Arbustos</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url "sustrato" %}"><strong>Sustratos</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url "macetero" %}"><strong>Maceteros</strong></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="{% url "nosotros" %}"><strong>Nosotros</strong></a>
+        </li>
+      </ul>
+      <!-- Iconos de usuario y carrito alineados a la derecha -->
+      <a href="{% url "login" %}" class="navbar-text text-white ms-auto me-3" id="userIcon">
+        <i class="fas fa-user"></i> <span id="usernameDisplay"></span>
+      </a>
+      <span class="navbar-text text-white me-3" id="cartIcon" data-bs-toggle="modal" style="cursor: pointer;">
+        <a href="{% url 'cart:view_cart' %}" class="text-decoration-none text-white">
+          <i class="fa fa-shopping-cart"></i>
+        </a>
+      </span>    
     </div>
+  </nav>
+  <!-- Fin de la barra de navegación -->
+
+  <div class="center-content">
+    <h2>Iniciar Sesión</h2>
+    <form method="post" class="login-form my-4">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="mb-3">
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                {% endif %}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
+    </form>
+    <a href="{% url 'registro' %}" class="btn btn-primary btn-sm">Crear Usuario</a>
+    {% if messages %}
+        <ul class="list-unstyled">
+            {% for message in messages %}
+                <li class="text-danger">{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</div>
     
     <footer class="bg-success text-light py-2">
         <div class="container2">

@@ -14,7 +14,6 @@ from pathlib import Path
 
 
 
-
 # Configuración de sesión
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Backend de sesión (almacenamiento en base de datos)
 SESSION_COOKIE_NAME = 'sessionid'  # Nombre de la cookie de sesión
@@ -50,17 +49,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Producto',
     'Login',
+    'cart',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',  # Middleware de sesión
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'RinconVerde.urls'
 

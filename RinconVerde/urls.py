@@ -18,12 +18,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from Producto import views as producto_views
+from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('Producto/', include('Producto.urls')),
     path('Login/', include('Login.urls')),
-    path('', producto_views.index, name='index'),  # URL raíz
+    path('cart/', include('cart.urls')),
+    path('', RedirectView.as_view(url='/Producto/', permanent=True)),  # Redirect the empty path to /Producto/
+    
 ]
-
 

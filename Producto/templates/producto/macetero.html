@@ -52,8 +52,10 @@
     <a href="{% url "login" %}" class="navbar-text text-white ms-auto me-3" id="userIcon">
       <i class="fas fa-user"></i> <span id="usernameDisplay"></span>
     </a>
-    <span class="navbar-text text-white me-3" id="cartIcon" data-bs-toggle="modal" data-bs-target="#cartModal">
-      <i class="fa fa-shopping-cart"></i>
+    <span class="navbar-text text-white me-3" id="cartIcon" data-bs-toggle="modal" style="cursor: pointer;">
+      <a href="{% url 'cart:view_cart' %}" class="text-decoration-none text-white">
+        <i class="fa fa-shopping-cart"></i>
+      </a>
     </span>
   </div>
 </nav>
@@ -114,10 +116,21 @@
               <!-- Precio -->
               <p class="card-price">Precio: $26.900</p>
               <!-- Disponibilidad -->
-              <p class="card-availability"><strong>Disponibilidad:</strong> 11 Unidades</p>
+              <p class="card-availability"><strong>Disponibilidad:</strong> 
+                {% for product in products %}
+                    {% if product.id == 19 %}
+                        {{ product.stock }} Unidades
+                    {% endif %}
+                {% endfor %}
+            </p>
               <!-- Boton para agregar al carrito -->
               <div class="text-center">
-                <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+              <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="19">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+            </form>
               </div>
             </div>
           </div>
@@ -139,10 +152,21 @@
               <!-- Precio -->
               <p class="card-price">Precio: $19.900</p>
               <!-- Disponibilidad -->
-              <p class="card-availability"><strong>Disponibilidad:</strong> 9 Unidades</p>
+              <p class="card-availability"><strong>Disponibilidad:</strong> 
+                {% for product in products %}
+                    {% if product.id == 20 %}
+                        {{ product.stock }} Unidades
+                    {% endif %}
+                {% endfor %}
+            </p>
               <!-- Boton para agregar al carrito -->
               <div class="text-center">
-                <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+              <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="20">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+            </form>
               </div>
             </div>
           </div>
@@ -167,10 +191,21 @@
               <!-- Precio -->
               <p class="card-price"><del>Precio: $20.900</del> <span class="discount-price">Ahora: $19.855</span></p>
               <!-- Disponibilidad -->
-              <p class="card-availability"><strong>Disponibilidad:</strong> 2 Unidades</p>
+              <p class="card-availability"><strong>Disponibilidad:</strong> 
+                {% for product in products %}
+                    {% if product.id == 21 %}
+                        {{ product.stock }} Unidades
+                    {% endif %}
+                {% endfor %}
+            </p>
               <!-- Boton para agregar al carrito -->
               <div class="text-center">
-                <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+              <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="21">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+            </form>
               </div>
             </div>
           </div>
@@ -195,10 +230,16 @@
               <!-- Precio -->
               <p class="card-price">Precio: $139.000</p>
               <!-- Disponibilidad -->
-              <p class="card-availability"><strong>Disponibilidad:</strong> Sin Unidades</p>
+              <p class="card-availability"><strong>Disponibilidad:</strong> 
+                {% for product in products %}
+                    {% if product.id == 22 %}
+                        {{ product.stock }} Unidades
+                    {% endif %}
+                {% endfor %}
+            </p>
               <!-- Boton -->
               <div class="text-center">
-                <button class="btn btn-danger mt-auto">Agotado</button>
+                <button class="btn btn-danger">Agotado</button>
               </div>
             </div>
           </div>
@@ -220,10 +261,21 @@
               <!-- Precio -->
               <p class="card-price">Precio: $61.900</p>
               <!-- Disponibilidad -->
-              <p class="card-availability"><strong>Disponibilidad:</strong> 12 Unidades</p>
+              <p class="card-availability"><strong>Disponibilidad:</strong> 
+                {% for product in products %}
+                    {% if product.id == 23 %}
+                        {{ product.stock }} Unidades
+                    {% endif %}
+                {% endfor %}
+            </p>
               <!-- Boton para agregar al carrito -->
               <div class="text-center">
-                <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+              <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="23">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+            </form>
               </div>
             </div>
           </div>
@@ -245,10 +297,21 @@
               <!-- Precio -->
               <p class="card-price">Precio: $16.000</p>
               <!-- Disponibilidad -->
-              <p class="card-availability"><strong>Disponibilidad:</strong> 5 Unidades</p>
+              <p class="card-availability"><strong>Disponibilidad:</strong> 
+                {% for product in products %}
+                    {% if product.id == 24 %}
+                        {{ product.stock }} Unidades
+                    {% endif %}
+                {% endfor %}
+            </p>
               <!-- Boton para agregar al carrito -->
               <div class="text-center">
-                <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+              <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="24">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+            </form>
               </div>
             </div>
           </div>

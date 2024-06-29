@@ -1,0 +1,100 @@
+/* Estilo para la barra de navegación con fondo gradiente */
+.navbar-dark {
+    background-image: linear-gradient(to right, #40A578, #9DDE8B);
+}
+
+/* Fondo de la página */
+body {
+    background-image: url('../IMG/pexels-minan1398-1131458.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el cuerpo */
+    background-position: center; /* Centra la imagen de fondo */
+    background-attachment: fixed; /* Fija la imagen de fondo para que no se desplace con el contenido */
+    background-color: whitesmoke; /* Color de fondo de respaldo */
+    margin-bottom: 100px; /* Añade espacio al final para el footer */
+}
+
+/* Estilo para el contenedor con margen izquierdo */
+.container2 {
+    margin-left: 450px;
+}
+
+/* Estilos para el contenedor padre que centraliza .contenedor */
+.contenedor {
+    width: 400px; /* Ancho del contenedor */
+    height: 550px; /* Alto del contenedor */
+    border: 2px solid grey; /* Borde gris */
+    border-radius: 20px; /* Bordes redondeados */
+    backdrop-filter: blur(15px); /* Aplica un desenfoque a los elementos detrás del contenedor */
+    display: flex; /* Establece el contenedor como flexbox */
+    justify-content: center; /* Centra horizontalmente el contenido */
+    align-items: center; /* Centra verticalmente el contenido */
+    margin: auto; /* Centra el contenedor horizontalmente */
+    margin-top: 50px; /* Ajusta el margen superior según sea necesario */
+}
+
+/* Estilo para el título dentro del contenedor */
+.contenedor h2 {
+    font-size: 2.3rem; /* Tamaño de fuente */
+    color: white; /* Color del texto */
+    text-align: center; /* Alineación del texto al centro */
+}
+
+/* Estilos para el contenedor de entrada */
+.input-contenedor {
+    position: relative; /* Posición relativa */
+    margin: 30px 0; /* Margen superior e inferior */
+    width: 300px; /* Ancho del contenedor de entrada */
+    border-bottom: 2px solid white; /* Borde inferior blanco */
+}
+
+/* Estilos para la etiqueta dentro del contenedor de entrada */
+.input-contenedor label {
+    position: absolute; /* Posición absoluta */
+    top: 50%; /* Centra verticalmente */
+    left: 5px; /* Posición desde la izquierda */
+    transform: translateY(-50%); /* Ajusta la posición verticalmente */
+    color: white; /* Color del texto */
+    font-size: 1rem; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita */
+    pointer-events: none; /* Desactiva eventos de ratón */
+    transition: 0.6s; /* Transición suave */
+}
+
+/* Estilos para el label cuando el input está en foco o válido */
+.input-contenedor input:focus ~ label,
+.input-contenedor input:valid ~ label,
+.input-contenedor input:not(:placeholder-shown) ~ label {
+    top: -5px; /* Mueve la etiqueta hacia arriba */
+}
+
+/* Estilos para la entrada de texto */
+.input-contenedor input {
+    width: 100%; /* Ocupa todo el ancho */
+    height: 50px; /* Altura de la entrada */
+    background-color: transparent; /* Fondo transparente */
+    border: none; /* Sin borde */
+    outline: none; /* Sin borde de enfoque */
+    font-size: 1rem; /* Tamaño de fuente */
+    padding: 5px 0; /* Espaciado interno */
+    color: white; /* Color del texto */
+}
+
+/* Estilos para el icono dentro del contenedor de entrada */
+.input-contenedor i {
+    position: absolute; /* Posición absoluta */
+    top: 19px; /* Posición desde la parte superior */
+    right: 8px; /* Posición desde la derecha */
+    color: white; /* Color del icono */
+    font-size: 1.6rem; /* Tamaño del icono */
+}
+
+/* Estilos para el footer */
+footer {
+    position: fixed; /* Posición fija */
+    bottom: 0; /* Alinea en la parte inferior */
+    width: 100%; /* Ancho completo */
+    background-color: #28a745; /* Color de fondo del footer */
+    color: white; /* Color del texto */
+    text-align: center; /* Centra el texto */
+    padding: 10px 0; /* Espaciado interno */
+}

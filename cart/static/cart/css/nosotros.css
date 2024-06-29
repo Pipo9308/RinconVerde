@@ -1,0 +1,71 @@
+/* sombreado del span  */
+.heading{
+    text-align: center;
+    font-size: 4rem;
+    color: #333;
+    padding: 1rem;
+    margin: 2rem 0;
+    background:#a9d39d7d;
+}
+
+/* color titulo span  */
+.heading span{
+    color: rgba(61, 149, 78, 0.757);
+    font-family: "Nunito Sans";
+    font-weight: 550;
+}
+
+/* ordena la frase del gif */
+.about .row .video-container{
+    flex: 1 1 40rem;
+    position: relative;
+}
+
+/* recuadro gif */
+.about .row .video-container video{
+    width: 100%;
+    border: 1.5rem solid #fff;
+    border-radius: .5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+    height: 100%;
+    object-fit: cover;
+
+}
+
+/* diseño texto dentro del gif */
+.about .row .video-container h3{
+    position: absolute;
+    top: 50%; transform: translateY(-50%);
+    font-size: 3rem;
+    background: #fff;
+    width: 100%;
+    padding: 1rem 2rem;
+    text-align: center;
+    mix-blend-mode: screen;
+    font-style: italic;
+    font-weight: 650;
+    
+}
+
+
+/* titulo h3 */
+.about .row .content h3{
+    font-size: 3rem;
+    color: #333;
+    font-family: "Nunito Sans";
+    font-weight: 500;
+    margin-bottom: 1rem; /* Ajusta el margen inferior según sea necesario */
+}
+
+/* tamaño letra del texto p */
+.about .row .content p{
+    font-size: 15px;
+    color: #999;
+    padding: 4rem 0;
+    padding-top: 0.6rem;
+    line-height: 1.5;
+    text-align: justify;
+    margin-bottom: -10%;
+    margin-bottom: 1.5rem; /* Ajusta el margen inferior según sea necesario */
+} 
+

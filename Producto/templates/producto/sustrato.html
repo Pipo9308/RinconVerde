@@ -54,44 +54,14 @@
     <a href="{% url "login" %}" class="navbar-text text-white ms-auto me-3" id="userIcon">
       <i class="fas fa-user"></i> <span id="usernameDisplay"></span>
     </a>
-    <span class="navbar-text text-white me-3" id="cartIcon" data-bs-toggle="modal" data-bs-target="#cartModal">
-      <i class="fa fa-shopping-cart"></i>
+    <span class="navbar-text text-white me-3" id="cartIcon" data-bs-toggle="modal" style="cursor: pointer;">
+      <a href="{% url 'cart:view_cart' %}" class="text-decoration-none text-white">
+        <i class="fa fa-shopping-cart"></i>
+      </a>
     </span>
   </div>
 </nav>
 <!-- Fin de la barra de navegación -->
-  <!-- Carrito de Compras Modal -->
-  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Total</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody id="cartItems">
-              <!-- Items del carrito serán agregados aquí -->
-            </tbody>
-          </table>
-          <p class="text-end"><strong>Total: <span id="cartTotal">0</span></strong></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <a href="carrito.html" class="btn btn-primary">Proceder al Pago</a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Titulo Producto -->
   <h1 class="heading"> <span> Sustrato </span></h1>
@@ -118,10 +88,21 @@
                       <!-- Precio -->
                       <p class="card-price"><del>Precio: $6.990</del> <span class="discount-price">Ahora: $6.290</span></p>
                       <!-- Disponibilidad -->
-                      <p class="card-availability"><strong>Disponibilidad:</strong> 2 Unidades</p>
+                      <p class="card-availability"><strong>Disponibilidad:</strong> 
+                        {% for product in products %}
+                            {% if product.id == 13 %}
+                                {{ product.stock }} Unidades
+                            {% endif %}
+                        {% endfor %}
+                    </p>
                       <!-- Boton para agregar al carrito -->
                       <div class="text-center">
-                          <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+                      <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="13">
+                        <input type="hidden" name="quantity" value="1">
+                        <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+                    </form>
                       </div>
                   </div>
               </div>
@@ -144,10 +125,16 @@
                       <!-- Precio -->
                       <p class="card-price">Precio: $12.990</p>
                       <!-- Disponibilidad -->
-                      <p class="card-availability"><strong>Disponibilidad:</strong> Sin Unidades</p>
+                      <p class="card-availability"><strong>Disponibilidad:</strong> 
+                        {% for product in products %}
+                            {% if product.id == 14 %}
+                                {{ product.stock }} Unidades
+                            {% endif %}
+                        {% endfor %}
+                    </p>
                       <!-- Boton para agregar al carrito -->
                       <div class="text-center">
-                          <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+                        <button class="btn btn-danger">Agotado</button>
                       </div>
                   </div>
               </div>
@@ -170,10 +157,21 @@
                       <!-- Precio -->
                       <p class="card-price">Precio: $7.990</p>
                       <!-- Disponibilidad -->
-                      <p class="card-availability"><strong>Disponibilidad:</strong> 5 Unidades</p>
+                      <p class="card-availability"><strong>Disponibilidad:</strong> 
+                        {% for product in products %}
+                            {% if product.id == 15 %}
+                                {{ product.stock }} Unidades
+                            {% endif %}
+                        {% endfor %}
+                    </p>
                       <!-- Boton para agregar al carrito -->
                       <div class="text-center">
-                          <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+                      <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                        {% csrf_token %}
+                        <input type="hidden" name="product_id" value="15">
+                        <input type="hidden" name="quantity" value="1">
+                        <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+                    </form>
                       </div>
                   </div>
               </div>
@@ -201,10 +199,21 @@
                   <!-- Precio -->
                   <p class="card-price"><del>Precio: $7.490</del> <span class="discount-price">Ahora: $6.740</span></p>
                   <!-- Disponibilidad -->
-                  <p class="card-availability"><strong>Disponibilidad:</strong> 17 Unidades</p>
+                  <p class="card-availability"><strong>Disponibilidad:</strong> 
+                    {% for product in products %}
+                        {% if product.id == 16 %}
+                            {{ product.stock }} Unidades
+                        {% endif %}
+                    {% endfor %}
+                </p>
                   <!-- Boton para agregar al carrito -->
-                  <div class="mt-auto text-center">
-                      <button class="btn btn-success add-to-cart text-center">Agregar al carrito</button>
+                  <div class="text-center">
+                  <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="16">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+                </form>
                   </div>
               </div>
           </div>
@@ -226,10 +235,21 @@
                   <!-- Precio -->
                   <p class="card-price">Precio: $14.990</p>
                   <!-- Disponibilidad -->
-                  <p class="card-availability"><strong>Disponibilidad:</strong> 8 Unidades</p>
+                  <p class="card-availability"><strong>Disponibilidad:</strong> 
+                    {% for product in products %}
+                        {% if product.id == 17 %}
+                            {{ product.stock }} Unidades
+                        {% endif %}
+                    {% endfor %}
+                </p>
                   <!-- Boton para agregar al carrito -->
-                  <div class="mt-auto text-center">
-                      <button class="btn btn-success add-to-cart text-center">Agregar al carrito</button>
+                  <div class="text-center">
+                  <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="17">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+                </form>
                   </div>
               </div>
           </div>
@@ -251,11 +271,22 @@
                   <!-- Precio -->
                   <p class="card-price"><del>Precio: $6.990</del> <span class="discount-price">Ahora: $6.290</span></p>
                   <!-- Disponibilidad -->
-                  <p class="card-availability"><strong>Disponibilidad:</strong> 2 Unidades</p>
+                  <p class="card-availability"><strong>Disponibilidad:</strong> 
+                    {% for product in products %}
+                        {% if product.id == 18 %}
+                            {{ product.stock }} Unidades
+                        {% endif %}
+                    {% endfor %}
+                </p>
                   <!-- Boton para agregar al carrito -->
-                  <div class="mt auto text-center">
-                    <button class="btn btn-success add-to-cart text-center">Agregar al carrito</button>
-                  </div>
+                  <div class="text-center">
+                  <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="product_id" value="18">
+                    <input type="hidden" name="quantity" value="1">
+                    <button type="submit" class="btn btn-success mt-3">Agregar al carrito</button>
+                </form>
+                </div>
               </div>
             </div>
         </div>

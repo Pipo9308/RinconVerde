@@ -20,6 +20,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+    path('index/', views.index, name='index'),
     path('', views.index, name='index'),
     path('brotes/', views.brotes, name='brotes'),
     path('arbustos/', views.arbustos, name='arbustos'),
