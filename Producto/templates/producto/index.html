@@ -64,43 +64,7 @@
 </nav>
 <!-- Fin de la barra de navegación -->
 
-
-  
   <h1><img src="{% static 'producto/IMG/headers/titulo.png' %}" alt=". . ." style="max-width: 100%; height: auto;"></h1>
-  
-  <!-- Carrito de Compras Modal -->
-  <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="cartModalLabel">Carrito de Compras</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Producto</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Total</th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody id="cartItems">
-              <!-- Items del carrito serán agregados aquí -->
-            </tbody>
-          </table>
-          <p class="text-end"><strong>Total: <span id="cartTotal">0</span></strong></p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <a href="{% url 'cart' %}" class="btn btn-primary">Proceder al Pago</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
 
   <!-- Carrusel -->
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
@@ -141,7 +105,7 @@
   <div class="container mt-3">
     <div class="row">
       <!-- Primera card -->
-      <div class="col-md-3">
+      <div class="col-md-4">
         <!-- Card -->
         <div class="card h-100 d-flex flex-column">
           <!-- Imagen -->
@@ -157,13 +121,18 @@
             <p class="card-price"><del>Precio: $22.000</del> <span class="discount-price">Ahora: $17.600</span></p>
             <!-- Boton para agregar al carrito -->
             <div class="mt-auto text-center">
-              <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+              <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="1">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="btn btn-success mt-3">Agregar</button>
+            </form>
             </div>
           </div>
         </div>
       </div>
       <!-- Segunda card -->
-      <div class="col-md-3">
+      <div class="col-md-4">
         <!-- Card -->
         <div class="card h-100 d-flex flex-column">
           <!-- Imagen -->
@@ -179,13 +148,18 @@
             <p class="card-price"><del>Precio: $6.990</del> <span class="discount-price">Ahora: $6.290</span></p>
             <!-- Boton para agregar al carrito -->
             <div class="mt-auto text-center">
-              <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+              <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="13">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="btn btn-success mt-3">Agregar</button>
+            </form>
             </div>
           </div>
         </div>
       </div>
       <!-- Tercera card -->
-      <div class="col-md-3">
+      <div class="col-md-4">
         <!-- Card -->
         <div class="card h-100 d-flex flex-column">
           <!-- Imagen -->
@@ -201,31 +175,15 @@
             <p class="card-price"><del>Precio: $6.500</del> <span class="discount-price">Ahora: $5.525</span></p>
             <!-- Boton para agregar al carrito -->
             <div class="mt-auto text-center">
-              <button class="btn btn-success add-to-cart">Agregar al carrito</button>
+              <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
+                {% csrf_token %}
+                <input type="hidden" name="product_id" value="9">
+                <input type="hidden" name="quantity" value="1">
+                <button type="submit" class="btn btn-success mt-3">Agregar</button>
+            </form>
             </div>
-          </div>
         </div>
       </div>
-      <!-- Cuarta card -->
-      <div class="col-md-3">
-        <!-- Card -->
-        <div class="card h-100 d-flex flex-column">
-          <!-- Imagen -->
-          <img src="{% static 'producto/IMG/maceteros/919729-firenze3.jpg' %}" class="card-img-top" alt="Imagen del producto"
-            style="height: 200px; object-fit: cover;">
-          <div class="discount-image">
-            <p class="discount-text">5%</p>
-          </div>
-          <div class="card-body d-flex flex-column">
-            <!-- Nombre -->
-            <h5 class="card-title text-center">Macetero Firenze</h5>
-            <!-- Precio -->
-            <p class="card-price"><del>Precio: $20.900</del> <span class="discount-price">Ahora: $19.855</span></p>
-            <!-- Boton para agregar al carrito -->
-            <div class="mt-auto text-center">
-              <button class="btn btn-success add-to-cart">Agregar al carrito</button>
-            </div>
-          </div>
         </div>
       </div>
     </div>

@@ -1,20 +1,51 @@
 
 from django.shortcuts import render
+from cart.models import Product
 
 def index(request):
-    return render(request, 'producto/index.html')
+    # Obtener todos los productos
+    products = Product.objects.all()
+
+    context = {
+        'products': products,
+    }
+    return render(request, 'producto/index.html', context)
 
 def brotes(request):
-    return render(request, 'producto/brotes.html')
+    # Obtener todos los productos
+    products = Product.objects.all()
+
+    context = {
+        'products': products,
+    }
+    return render(request, 'producto/brotes.html', context)
 
 def arbustos(request):
-    return render(request, 'producto/arbustos.html')
+    # Obtener todos los productos
+    products = Product.objects.all()
+
+    context = {
+        'products': products,
+    }
+    return render(request, 'producto/arbustos.html', context)
 
 def sustrato(request):
-    return render(request, 'producto/sustrato.html')
+    # Obtener todos los productos
+    products = Product.objects.all()
+
+    context = {
+        'products': products,
+    }
+    return render(request, 'producto/sustrato.html', context)
 
 def macetero(request):
-    return render(request, 'producto/macetero.html')
+    # Obtener todos los productos
+    products = Product.objects.all()
+
+    context = {
+        'products': products,
+    }
+    return render(request, 'producto/macetero.html', context)
 
 def login(request):
     return render(request, 'login/login.html')
