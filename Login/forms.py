@@ -1,6 +1,12 @@
 # forms.py
 from django import forms
 from .models import Usuario
+from cart.models import Product
+
+class ProductoForm(forms.ModelForm):
+    class Meta:
+        model = Product
+        fields = ['name', 'description', 'price', 'stock']
 
 class RegistroForm(forms.ModelForm):
     terminos = forms.BooleanField(label='He leído los términos', required=True)
