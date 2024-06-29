@@ -1,4 +1,3 @@
-<!-- cart/view_cart.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,38 +61,31 @@
   </div>
 </nav>
 <!-- Fin de la barra de navegación -->
- 
+
+<!-- Boletas -->
 <div class="container mt-5">
-  <h1 class="mb-4">Proceder al Pago</h1>
-  
-  <!-- Mostrar los productos del carrito -->
-  <ul class="list-group mb-4">
-      {% for item in cart_items %}
-      <li class="list-group-item">
-          <strong>{{ item.product.name }}</strong> - Cantidad: {{ item.quantity }} - Total: ${{ item.total_price|floatformat:"2" }}
-      </li>
-      {% endfor %}
-      <li class="list-group-item">Total: ${{ total_price }}</li>
-  </ul>
-  
-  <!-- Formulario para ingresar nombre, dirección y teléfono -->
-  <form method="post">
-      {% csrf_token %}
-      <div class="mb-3">
-          <label for="nombre" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="nombre" name="nombre" required>
-      </div>
-      <div class="mb-3">
-          <label for="direccion" class="form-label">Dirección</label>
-          <input type="text" class="form-control" id="direccion" name="direccion" required>
-      </div>
-      <div class="mb-3">
-          <label for="telefono" class="form-label">Teléfono</label>
-          <input type="tel" class="form-control" id="telefono" name="telefono" required>
-      </div>
-      <button type="submit" class="btn btn-success">Proceder</button>
-  </form>
+    <h1>Boletas Registradas</h1>
+    <div class="row">
+        {% for boleta in boletas %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Boleta #{{ boleta.id }}</h5>
+                <p class="card-text">Nombre: {{ boleta.nombre }}</p>
+                <p class="card-text">Dirección: {{ boleta.direccion }}</p>
+                <p class="card-text">Teléfono: {{ boleta.telefono }}</p>
+                <p class="card-text">Fecha: {{ boleta.fecha }}</p>
+                <p class="card-text">Total: {{ boleta.precio_total }}</p>
+                <ul class="list-group list-group-flush">
+                    {% for detalle in boleta.detalles.all %}
+                    <li class="list-group-item">{{ detalle.product.name }} - Cantidad: {{ detalle.cantidad }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
+<!-- Fin Boletas-->
 
   <!-- Footer -->
   <footer class="bg-success text-light py-2">
@@ -129,3 +121,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
