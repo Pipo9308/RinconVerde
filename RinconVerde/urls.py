@@ -26,5 +26,6 @@ urlpatterns = [
     path('Login/', include('Login.urls')),
     path('cart/', include('cart.urls')),
     path('', RedirectView.as_view(url='/Producto/', permanent=True)),  # Redirect the empty path to /Producto/
+    
 ]
 

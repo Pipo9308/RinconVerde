@@ -1,31 +1,4 @@
-/* Estilo carrusel */
-.custom-carousel-item img {
-    width: 500px;
-    height: 500px;
-    object-fit: cover;
-}
-#carouselExampleIndicators {
-    padding-top: 50px;
-    padding-left: 30px;
-    padding-right: 30px;
-}
 
-/* Estilo cards*/
-.card-img-top {
-    height: 500px; 
-    object-fit: cover; 
-}
-
-/* Estilo del h1 */
-h1 {
-    text-align: center;
-    padding-top: 30px;
-}
-
-h1 img {
-    height: 300px;
-    width: 50%;
-}
 
 /* Estilo para el fondo con gradiente */
 .navbar-dark{
@@ -48,34 +21,16 @@ body {
     
 }
 
-/* Dropdown color */
-.dropdown-item:hover {
-  background-color: lightgreen !important;
-}
-.dropdown-item:active {
-    background-color: #40A578 !important;
-}
-/* Carousel style */
-.carousel-item img {
-    
-    width: 100% !important;
-    height: 500px;
-    object-fit: cover;
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-top: 50px;
-    padding-bottom: 50px;
-}
 
-.navbar-nav .nav-link {
-    margin-right: 30px; /* Espaciado entre los elementos de navegación */
-}
+
+
 
 .container {
     margin-top: 200px;
+    height: 400px;
     width: 400px;
     text-align: center;
-    margin-bottom: 320px;
+    margin-bottom: 70px;
     backdrop-filter: blur(15px) ;
     border-radius: 20px;
     
@@ -88,9 +43,4 @@ body {
 
 }
 
-.h1 img {
-    width: auto; 
-    height: auto; 
-    max-width: 100%; 
-    max-height: 100%; 
-}
+

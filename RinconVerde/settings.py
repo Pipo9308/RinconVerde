@@ -12,25 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 import os
 from pathlib import Path
 
-# # Logging configuration
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'handlers': {
-#         'console': {
-#             'level': 'DEBUG',  # O nivel que necesites (DEBUG, INFO, WARNING, ERROR, CRITICAL)
-#             'class': 'logging.StreamHandler',
-#         },
-#         # Agrega más handlers si es necesario para guardar logs en archivos, etc.
-#     },
-#     'loggers': {
-#         'django': {
-#             'handlers': ['console'],
-#             'level': 'DEBUG',  # O nivel que necesites
-#             'propagate': True,
-#         },
-#     },
-# }
+
 
 # Configuración de sesión
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Backend de sesión (almacenamiento en base de datos)

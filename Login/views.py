@@ -1,5 +1,10 @@
 from django.shortcuts import render, redirect
 
+from .forms import RegistroForm
+from django.contrib.auth import authenticate, login
+from .models import Usuario
+from django.contrib import messages
+
 def index(request):
     return render(request, 'producto/index.html')
 
@@ -38,3 +43,34 @@ def privacy_view(request):
 def terms_view(request):
     # Lógica de la vista aquí
     return render(request, 'producto/terms.html')
+
+
+
+def registro_view(request):
+    if request.method == 'POST':
+        form = RegistroForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('index')  # Cambia 'index' por la URL a la que deseas redirigir después de registrar
+    else:
+        form = RegistroForm()
+    
+    return render(request, 'login/registro.html', {'form': form})
+
+
+def login_view(request):
+    if request.method == 'POST':
+        emails = request.POST.get('email')
+        passwords = request.POST.get('password')
+
+        
+        user = authenticate(request, username=emails, password=passwords)
+
+        if user is not None:
+            login(request, user)
+            return redirect('index')  # Redirige a la página de inicio después del inicio de sesión exitoso
+        else:
+            messages.error(request, 'Correo electrónico o contraseña incorrectos.')
+
+    # Si es GET o si hay errores de autenticación, renderiza nuevamente el formulario de inicio de sesión
+    return render(request, 'login/login.html')
