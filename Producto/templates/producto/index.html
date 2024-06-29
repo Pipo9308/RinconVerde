@@ -64,7 +64,11 @@
 </nav>
 <!-- Fin de la barra de navegación -->
 
-  <h1><img src="{% static 'producto/IMG/headers/titulo.png' %}" alt=". . ." style="max-width: 100%; height: auto;"></h1>
+<div class="container">
+  <h1 class="d-flex justify-content-center">
+      <img src="{% static 'producto/IMG/headers/titulo.png' %}" alt=". . ." style="max-width: 100%; height: auto;">
+  </h1>
+</div>
 
   <!-- Carrusel -->
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
@@ -101,7 +105,9 @@
 
   
   <!-- Productos destacados -->
-  <h1>Productos Destacados</h1>
+  <div class="container">
+    <h1 class="text-center">Productos Destacados</h1>
+</div>
   <div class="container mt-3">
     <div class="row">
       <!-- Primera card -->
