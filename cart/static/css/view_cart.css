@@ -1,0 +1,11 @@
+footer {
+    margin-top: 20%; /* Ajusta el valor según lo necesites */
+    
+  }
+
+  .container {
+    max-width: 800px; /* Ajusta el ancho máximo del contenedor según tus necesidades */
+    width: 100%; /* Asegura que el contenedor ocupe el ancho disponible */
+    padding-top: 50px;
+}  
+

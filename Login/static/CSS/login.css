@@ -62,3 +62,8 @@ btn-primary {
     box-shadow: 0px 0px 10px rgba(109, 153, 80, 0.418); /* Sombra suave */
     text-align: center; /* Alineación central del contenido */
 }
+
+footer {
+    margin-top: 30px; /* Ajusta el valor según lo necesites */
+    
+  }

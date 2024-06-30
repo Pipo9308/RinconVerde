@@ -1,0 +1,41 @@
+/* Estilo general del contenedor */
+.container {
+    box-shadow: 0 0 20px rgba(156, 135, 135, 0.1); /* Sombra suave */
+    padding: 20px;
+    border-radius: 10px;
+    
+    margin-top: 20px; /* Espacio arriba del contenedor */
+}
+
+/* Estilo del título principal */
+h1 {
+    text-align: center;
+    margin-bottom: 30px; /* Espacio inferior para separar del contenido */
+}
+
+/* Estilo de las barras de progreso */
+.progress-bar {
+    font-size: 14px; /* Tamaño de la fuente en las barras de progreso */
+}
+
+/* Ajuste para el espacio entre los elementos */
+.mb-2 {
+    margin-bottom: 15px;
+}
+
+/* Estilo de los enlaces de la barra de navegación */
+.navbar-nav .nav-link {
+    color: #ffffff; /* Color de texto blanco */
+    margin-right: 10px; /* Espacio entre los enlaces */
+}
+
+/* Estilo para el botón de cerrar sesión */
+.navbar-nav .nav-link.logout {
+    color: #ffffff;
+}
+
+/* Ajuste para el tamaño del título de sección */
+h3 {
+    margin-top: 30px; /* Espacio arriba del título */
+    margin-bottom: 15px; /* Espacio inferior del título */
+}
