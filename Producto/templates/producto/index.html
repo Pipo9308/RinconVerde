@@ -13,7 +13,7 @@
     <link href="{% static 'producto/CSS/index.css' %}" rel="stylesheet">
     
     <script src="{% static 'login.js' %}"></script>
-  <title>Rinconcito Verde</title>
+  <title>Zen Vibes</title>
 </head>
 
 <body>
@@ -21,8 +21,8 @@
 <!-- Inicio de la barra de navegación -->
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <!-- Este es el logo o nombre de la página web -->
-  <img src="{% static "producto/IMG/Helen (2).png" %}" alt="" style="width: 100px;">
-  <a class="navbar-brand text-white" href="#"><strong>Rincón Verde</strong></a>
+  
+  <a class="navbar-brand text-white" href="#"><strong>Zen Vibes</strong></a>
   <!-- Este botón aparece cuando la pantalla es pequeña (responsive design) -->
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,16 +36,16 @@
         <a class="nav-link text-white" href="{% url "index" %}"><strong>Inicio</strong></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "brotes" %}"><strong>Brotes</strong></a>
+        <a class="nav-link text-white" href="{% url "brotes" %}"><strong>Hogar</strong></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "arbustos" %}"><strong>Arbustos</strong></a>
+        <a class="nav-link text-white" href="{% url "arbustos" %}"><strong>Tecnologia</strong></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "sustrato" %}"><strong>Sustratos</strong></a>
+        <a class="nav-link text-white" href="{% url "sustrato" %}"><strong>Salud y Belleza</strong></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "macetero" %}"><strong>Maceteros</strong></a>
+        <a class="nav-link text-white" href="{% url "macetero" %}"><strong>Juguetes</strong></a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white" href="{% url "nosotros" %}"><strong>Nosotros</strong></a>
@@ -66,7 +66,7 @@
 
 <div class="container">
   <h1 class="d-flex justify-content-center">
-      <img src="{% static 'producto/IMG/headers/titulo.png' %}" alt=". . ." style="max-width: 100%; height: auto;">
+      
   </h1>
 </div>
 
@@ -80,16 +80,16 @@
   </div>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img src="{% static 'producto/IMG/carousel/flores1.jpg' %}" class="d-block w-100" alt="Slide 1">
+      <img src="{% static 'producto/IMG/slider-5-family.png' %}" class="d-block w-100" alt="Slide 1">
     </div>
     <div class="carousel-item">
-      <img src="{% static 'producto/IMG/carousel/flores2.jpg' %}" class="d-block w-100" alt="Slide 2">
+      <img src="{% static 'producto/IMG/Sin título.jpg' %}" class="d-block w-100" alt="Slide 2">
     </div>
     <div class="carousel-item">
-      <img src="{% static 'producto/IMG/carousel/flores3.jpg' %}" class="d-block w-100" alt="Slide 3">
+      <img src="{% static 'producto/IMG/9f33f886-0237-4ebe-b17b-1ccc56f89dda___6d358b959a094f878485b86ee189994d.webp' %}" class="d-block w-100" alt="Slide 3">
     </div>
     <div class="carousel-item">
-      <img src="{% static 'producto/IMG/carousel/flores4.jpg' %}" class="d-block w-100" alt="Slide 4">
+      <img src="{% static 'producto/IMG/b179830f-b076-4e87-84c0-ca735f91579f___7d60b3169e184bfb3707afe7f6a54ec0 (1).webp' %}" class="d-block w-100" alt="Slide 4">
     </div>
   </div>
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -115,16 +115,14 @@
         <!-- Card -->
         <div class="card h-100 d-flex flex-column">
           <!-- Imagen -->
-          <img src="{% static 'producto/IMG/plantas/echinocactus.jpg' %}" class="card-img-top" alt="Imagen del producto"
+          <img src="{% static 'producto/IMG/224274-1600-1600.webp' %}" class="card-img-top" alt="Imagen del producto"
             style="height: 200px; object-fit: cover;">
-          <div class="discount-image">
-            <p class="discount-text">20%</p>
-          </div>
+          
           <div class="card-body d-flex flex-column">
             <!-- Nombre -->
-            <h5 class="card-title text-center">Asiento de Suegra (Echinocactus Grusonii)</h5>
+            <h5 class="card-title text-center">Estuche Para Airpods Mini Family Azul MINI FAMILY SERIES</h5>
             <!-- Precio -->
-            <p class="card-price"><del>Precio: $22.000</del> <span class="discount-price">Ahora: $17.600</span></p>
+            <p class="card-price">Precio: $2.990</p>
             <!-- Boton para agregar al carrito -->
             <div class="mt-auto text-center">
               <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
@@ -142,16 +140,14 @@
         <!-- Card -->
         <div class="card h-100 d-flex flex-column">
           <!-- Imagen -->
-          <img src="{% static 'producto/IMG/sustratos/sustrato-almacigos-22-litros-34028549505206.webp' %}" class="card-img-top"
+          <img src="{% static 'producto/IMG/274715-1600-1600.webp' %}" class="card-img-top"
             alt="Imagen del producto" style="height: 200px; object-fit: cover;">
-          <div class="discount-image">
-            <p class="discount-text">10%</p>
-          </div>
+          
           <div class="card-body d-flex flex-column">
             <!-- Nombre -->
-            <h5 class="card-title text-center">Sustrato Almácigos | 10 Litros</h5>
+            <h5 class="card-title text-center">Peluche DunDun Disfrazado De Cangrejito Felpa Rojo</h5>
             <!-- Precio -->
-            <p class="card-price"><del>Precio: $6.990</del> <span class="discount-price">Ahora: $6.290</span></p>
+            <p class="card-price">Precio: $14.900</p>
             <!-- Boton para agregar al carrito -->
             <div class="mt-auto text-center">
               <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
@@ -169,16 +165,14 @@
         <!-- Card -->
         <div class="card h-100 d-flex flex-column">
           <!-- Imagen -->
-          <img src="{% static 'producto/IMG/arbustos/Arbusto3.webp' %}" class="card-img-top" alt="Imagen del producto"
+          <img src="{% static 'producto/IMG/228958-1600-1600.webp' %}" class="card-img-top" alt="Imagen del producto"
             style="height: 200px; object-fit: cover;">
-          <div class="discount-image">
-            <p class="discount-text">15%</p>
-          </div>
+          
           <div class="card-body d-flex flex-column">
             <!-- Nombre -->
-            <h5 class="card-title text-center">Lavanda Francesa - Lavandula Dentata</h5>
+            <h5 class="card-title text-center">Mascarilla Para Labios Shiny Chocolate</h5>
             <!-- Precio -->
-            <p class="card-price"><del>Precio: $6.500</del> <span class="discount-price">Ahora: $5.525</span></p>
+            <p class="card-price">Precio: $1.290</p>
             <!-- Boton para agregar al carrito -->
             <div class="mt-auto text-center">
               <form action="{% url 'cart:add_to_cart' %}" method="post" class="add-to-cart-form">
@@ -196,39 +190,39 @@
   </div>
   <!-- Repite este patrón para las demás tarjetas -->
   
-  <!-- Footer -->
-  <footer class="bg-success text-light py-2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 mt-2">
-          <h5>Contacto</h5>
-          <ul class="list-unstyled text-light">
-            <li><i class="fa-solid fa-house me-2"></i>Dirección: Avenida Siempreviva #742, Springfield</i></li>
-            <li><i class="fa-solid fa-phone me-2"></i>Teléfono: +123 456 789 </i></li>
-            <li><i class="fa-solid fa-envelope me-2"></i>Correo Electrónico: info@rinconverde.com</i></li>
-            <li><i class="fa-solid fa-circle-question me-2"></i></i>Ayuda</i></li>
-        </ul>
-        </div>
-        <div class="col-md-4 mt-2">
-          <h5>Redes Sociales</h5>
-          <ul class="list-unstyled">
-            <li><a href="https://www.facebook.com" class="text-light"><i class="fab fa-facebook-f me-2"></i>Facebook</a></li>
-            <li><a href="https://www.x.com" class="text-light"><i class="fab fa-twitter me-2"></i>Twitter</a></li>
-            <li><a href="https://www.instagram.com" class="text-light"><i class="fab fa-instagram me-2"></i>Instagram</a></li>
+    <!-- Footer -->
+    <footer class="bg-success text-light py-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mt-2">
+            <h5>Contacto</h5>
+            <ul class="list-unstyled text-light">
+              <li><i class="fa-solid fa-house me-2"></i>Dirección: Avenida Siempreviva #742, Springfield</i></li>
+              <li><i class="fa-solid fa-phone me-2"></i>Teléfono: +123 456 789 </i></li>
+              <li><i class="fa-solid fa-envelope me-2"></i>Correo Electrónico: info@zenvibes.com</i></li>
+              <li><i class="fa-solid fa-circle-question me-2"></i></i>Ayuda</i></li>
           </ul>
+          </div>
+          <div class="col-md-4 mt-2">
+            <h5>Redes Sociales</h5>
+            <ul class="list-unstyled">
+              <li><a href="https://www.facebook.com" class="text-light"><i class="fab fa-facebook-f me-2"></i>Facebook</a></li>
+              <li><a href="https://www.x.com" class="text-light"><i class="fab fa-twitter me-2"></i>Twitter</a></li>
+              <li><a href="https://www.instagram.com" class="text-light"><i class="fab fa-instagram me-2"></i>Instagram</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mt-2">
+            <h5>Categorias</h5>
+            <ul class="list-unstyled text-light">
+                <li> Hogar </li>
+                <li> Tecnologia </li>
+                <li> Salud y Belleza </li>
+                <li> Jugetes </li>
+            </ul>
         </div>
-        <div class="col-md-4 mt-2">
-          <h5>Categorias</h5>
-          <ul class="list-unstyled text-light">
-              <li> Brotes </li>
-              <li> Arbustos </li>
-              <li> Sustratos </li>
-              <li> Maceteros </li>
-          </ul>
+        </div>
       </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
   
 <!-- Bootstrap Bundle (JS incluido Popper.js) -->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

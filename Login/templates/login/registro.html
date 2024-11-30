@@ -13,51 +13,51 @@
     <title>Registro</title>
 </head>
 <body>
-        <!-- Inicio de la barra de navegación -->
+<!-- Inicio de la barra de navegación -->
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-    <!-- Este es el logo o nombre de la página web -->
-    <img src="{% static "producto/IMG/Helen (2).png" %}" alt="" style="width: 100px;">
-    <a class="navbar-brand text-white" href="#"><strong>Rincón Verde</strong></a>
-    <!-- Este botón aparece cuando la pantalla es pequeña (responsive design) -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <!-- Aquí están los enlaces de la barra de navegación -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav me-auto">
-        <!-- Cada 'li' es un enlace en la barra de navegación -->
-        <li class="nav-item">
-          <a class="nav-link text-white" href="{% url "index" %}"><strong>Inicio</strong></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="{% url "brotes" %}"><strong>Brotes</strong></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="{% url "arbustos" %}"><strong>Arbustos</strong></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="{% url "sustrato" %}"><strong>Sustratos</strong></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="{% url "macetero" %}"><strong>Maceteros</strong></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white" href="{% url "nosotros" %}"><strong>Nosotros</strong></a>
-        </li>
-      </ul>
-      <!-- Iconos de usuario y carrito alineados a la derecha -->
-      <a href="{% url "login" %}" class="navbar-text text-white ms-auto me-3" id="userIcon">
-        <i class="fas fa-user"></i> <span id="usernameDisplay"></span>
+  <!-- Este es el logo o nombre de la página web -->
+  
+  <a class="navbar-brand text-white" href="#"><strong>Zen Vibes</strong></a>
+  <!-- Este botón aparece cuando la pantalla es pequeña (responsive design) -->
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!-- Aquí están los enlaces de la barra de navegación -->
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav me-auto">
+      <!-- Cada 'li' es un enlace en la barra de navegación -->
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url "index" %}"><strong>Inicio</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url "brotes" %}"><strong>Hogar</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url "arbustos" %}"><strong>Tecnologia</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url "sustrato" %}"><strong>Salud y Belleza</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url "macetero" %}"><strong>Juguetes</strong></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="{% url "nosotros" %}"><strong>Nosotros</strong></a>
+      </li>
+    </ul>
+    <!-- Iconos de usuario y carrito alineados a la derecha -->
+    <a href="{% url "login" %}" class="navbar-text text-white ms-auto me-3" id="userIcon">
+      <i class="fas fa-user"></i> <span id="usernameDisplay"></span>
+    </a>
+    <span class="navbar-text text-white me-3" id="cartIcon" data-bs-toggle="modal" style="cursor: pointer;">
+      <a href="{% url 'cart:view_cart' %}" class="text-decoration-none text-white">
+        <i class="fa fa-shopping-cart"></i>
       </a>
-      <span class="navbar-text text-white me-3" id="cartIcon" data-bs-toggle="modal" style="cursor: pointer;">
-        <a href="{% url 'cart:view_cart' %}" class="text-decoration-none text-white">
-          <i class="fa fa-shopping-cart"></i>
-        </a>
-      </span>    
-    </div>
-  </nav>
-  <!-- Fin de la barra de navegación -->
+    </span>    
+  </div>
+</nav>
+<!-- Fin de la barra de navegación -->
 
     <div class="contenedor">
         <form method="post" id="formulario2" action="{% url 'registro' %}">
@@ -95,28 +95,38 @@
         </form>
     </div>
 
+    <!-- Footer -->
     <footer class="bg-success text-light py-2">
-        <div class="container2">
-            <div class="row">
-                <div class="col-md-6 mt-2">
-                    <h5>Contacto</h5>
-                    <ul class="list-unstyled text-light">
-                        <li><i class="fa-solid fa-house me-2"></i> Dirección: Avenida Siempreviva #742, Springfield</li>
-                        <li><i class="fa-solid fa-phone me-2"></i> Teléfono: +123 456 789</li>
-                        <li><i class="fa-solid fa-envelope me-2"></i> Correo Electrónico: info@rinconverde.com</li>
-                        <li><i class="fa-solid fa-circle-question me-2"></i> Ayuda</li>
-                    </ul>
-                </div>
-                <div class="col-md-6 mt-2">
-                    <h5>Redes Sociales</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="https://www.facebook.com" class="text-light"><i class="fab fa-facebook-f me-2"></i> Facebook</a></li>
-                        <li><a href="https://www.x.com" class="text-light"><i class="fab fa-twitter me-2"></i> Twitter</a></li>
-                        <li><a href="https://www.instagram.com" class="text-light"><i class="fab fa-instagram me-2"></i> Instagram</a></li>
-                    </ul>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mt-2">
+            <h5>Contacto</h5>
+            <ul class="list-unstyled text-light">
+              <li><i class="fa-solid fa-house me-2"></i>Dirección: Avenida Siempreviva #742, Springfield</i></li>
+              <li><i class="fa-solid fa-phone me-2"></i>Teléfono: +123 456 789 </i></li>
+              <li><i class="fa-solid fa-envelope me-2"></i>Correo Electrónico: info@zenvibes.com</i></li>
+              <li><i class="fa-solid fa-circle-question me-2"></i></i>Ayuda</i></li>
+          </ul>
+          </div>
+          <div class="col-md-4 mt-2">
+            <h5>Redes Sociales</h5>
+            <ul class="list-unstyled">
+              <li><a href="https://www.facebook.com" class="text-light"><i class="fab fa-facebook-f me-2"></i>Facebook</a></li>
+              <li><a href="https://www.x.com" class="text-light"><i class="fab fa-twitter me-2"></i>Twitter</a></li>
+              <li><a href="https://www.instagram.com" class="text-light"><i class="fab fa-instagram me-2"></i>Instagram</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mt-2">
+            <h5>Categorias</h5>
+            <ul class="list-unstyled text-light">
+                <li> Hogar </li>
+                <li> Tecnologia </li>
+                <li> Salud y Belleza </li>
+                <li> Jugetes </li>
+            </ul>
         </div>
+        </div>
+      </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

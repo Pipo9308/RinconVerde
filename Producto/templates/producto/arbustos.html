@@ -12,15 +12,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="carrito.js"></script>
-  <title>Arbustos</title>
+  <title>Tecnologia</title>
 </head>
 <body>
 
  <!-- Inicio de la barra de navegación -->
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <!-- Este es el logo o nombre de la página web -->
-  <img src="{% static "producto/IMG/Helen (2).png" %}" alt="" style="width: 100px;">
-  <a class="navbar-brand text-white" href="#"><strong>Rincón Verde</strong></a>
+  
+  <a class="navbar-brand text-white" href="#"><strong>Zen Vibes</strong></a>
   <!-- Este botón aparece cuando la pantalla es pequeña (responsive design) -->
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,16 +34,16 @@
         <a class="nav-link text-white" href="{% url "index" %}"><strong>Inicio</strong></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "brotes" %}"><strong>Brotes</strong></a>
+        <a class="nav-link text-white" href="{% url "brotes" %}"><strong>Hogar</strong></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "arbustos" %}"><strong>Arbustos</strong></a>
+        <a class="nav-link text-white" href="{% url "arbustos" %}"><strong>Tecnologia</strong></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "sustrato" %}"><strong>Sustratos</strong></a>
+        <a class="nav-link text-white" href="{% url "sustrato" %}"><strong>Salud y Belleza</strong></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "macetero" %}"><strong>Maceteros</strong></a>
+        <a class="nav-link text-white" href="{% url "macetero" %}"><strong>Juguetes</strong></a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white" href="{% url "nosotros" %}"><strong>Nosotros</strong></a>
@@ -57,13 +57,13 @@
       <a href="{% url 'cart:view_cart' %}" class="text-decoration-none text-white">
         <i class="fa fa-shopping-cart"></i>
       </a>
-    </span>
+    </span>    
   </div>
 </nav>
 <!-- Fin de la barra de navegación -->
   
   <!-- Titulo Producto -->
-  <h1 class="heading"> <span> Arbustos </span></h1>
+  <h1 class="heading"> <span> Tecnologia </span></h1>
 
    <!--  Inicio Cards -->
    <div class="container mt-5">
@@ -71,12 +71,12 @@
   <!-- Primera card -->
   <div class="col-md-4">
     <div class="card h-100">
-        <img src="{% static 'producto/IMG/arbustos/Arbusto1.jpg' %}" class="card-img-top" alt="Imagen del producto">
+        <img src="{% static 'producto/IMG/218288-1600-1600.webp' %}" class="card-img-top" alt="Imagen del producto">
         <div class="card-body d-flex flex-column">
-            <h5 class="card-title">Pitosporo Tobira Enano - Pittosporum Tobira Nana</h5>
-            <p class="card-text">Arbusto Pequeño De Forma Baja Y Redondeada Tiene Hojas Verdes Brillantes Y Flores Blancas Con Olor A Azahar.</p>
+            <h5 class="card-title">Teclado Inalámbrico - Plateado - 285*120 Mm</h5>
+            <p class="card-text">Teclado Inalámbrico - Plateado - 285*120 Mm</p>
             <div class="mt-auto">
-                <p class="card-price">Precio: $5.600</p>
+                <p class="card-price">Precio: $15.990</p>
                 <p class="card-availability"><strong>Disponibilidad:</strong> 
                     {% for product in products %}
                         {% if product.id == 7 %}
@@ -102,16 +102,16 @@
             <!-- Card -->
             <div class="card h-100">
                 <!-- Imagen -->
-                <img src="{% static "producto/IMG/arbustos/Arbusto2.webp" %}" class="card-img-top" alt="Imagen del producto">
+                <img src="{% static "producto/IMG/241496-1600-1600.webp" %}" class="card-img-top" alt="Imagen del producto">
                 <div class="card-body d-flex flex-column">
                     <!-- Nombre -->
-                    <h5 class="card-title">Dimorfoteca - Osteospermun Sp.</h5>
+                    <h5 class="card-title">Audífonos Inalámbricos Con Estuche De Carga TWS Negros</h5>
                     <!-- Descripcion -->
-                    <p class="card-text">Especie Bajita, Apropiada Para Primera Línea De Macizos A Los Cuales Aportará Color</p>
+                    <p class="card-text">Zen Vibes tiene para ti estos audífonos inalámbricos en color negro, te otorgan un diseño elegante y sofisticado que se ajustara a todo tipo de estilos y necesidades ¡Disfruta de tu música favorita de manera cómoda y sin cables!</p>
                     <!-- Contenedor -->
                     <div class="mt-auto">
                       <!-- Precio -->
-                      <p class="card-price">Precio: $1.800</p>
+                      <p class="card-price">Precio: $17.990</p>
                       <!-- Disponibilidad -->
                       <p class="card-availability"><strong>Disponibilidad:</strong> 
                         {% for product in products %}
@@ -133,19 +133,18 @@
         <!-- Card -->
         <div class="card h-100">
             <!-- Imagen -->
-            <img src="{% static "producto/IMG/arbustos/Arbusto3.webp" %}" class="card-img-top" alt="Imagen del producto">
-            <div class="discount-image">
-              <p class="discount-text">15% Descuento</p>
-          </div>
+            <img src="{% static "producto/IMG/224274-1600-1600.webp" %}" class="card-img-top" alt="Imagen del producto">
+           
             <div class="card-body d-flex flex-column">
                 <!-- Nombre -->
-                <h5 class="card-title">Lavanda Francesa - Lavandula Dentata</h5>
+                <h5 class="card-title">Estuche Para Airpods Mini Family Azul MINI FAMILY SERIES</h5>
                 <!-- Descripcion -->
-                <p class="card-text">Planta aromática, flores violetas, hojas dentadas, originaria del Mediterráneo, propiedades medicinales.</p>
+                <p class="card-text">Diseño de nuestro hermoso señor pinguino .
+                  Diseño exclusivo, elegante y muy llamativo.</p>
                 <!-- Contenedor -->
                 <div class="mt-auto">
                   <!-- Precio -->
-                  <p class="card-price">Precio: $6.500</p>
+                  <p class="card-price">Precio: $2.990</p>
                   <!-- Disponibilidad -->
                   <p class="card-availability"><strong>Disponibilidad:</strong> 
                     {% for product in products %}
@@ -176,16 +175,16 @@
         <!-- Card -->
         <div class="card h-100">
             <!-- Imagen -->
-            <img src="{% static "producto/IMG/arbustos/Arbusto4.jpg" %}" class="card-img-top" alt="Imagen del producto">
+            <img src="{% static "producto/IMG/207485-1600-1600.webp" %}" class="card-img-top" alt="Imagen del producto">
             <div class="card-body d-flex flex-column">
                 <!-- Nombre -->
-                <h5 class="card-title">Salvia Nemorosa Salvatore Blue - Salvia Nemorosa</h5>
+                <h5 class="card-title">SOPORTE PARA CELULAR TIPO ANILLO - WE BARE BEARS</h5>
                 <!-- Descripcion -->
-                <p class="card-text">Posee largas varas de flores que atraen mariposas y todo tipo de insectos benéficos para el jardín.</p>
+                <p class="card-text">SOPORTE PARA CELULAR TIPO ANILLO - WE BARE BEARS</p>
                 <!-- Contenedor -->
                 <div class="mt-auto">
                   <!-- Precio -->
-                  <p class="card-price">Precio: $2.800</p>
+                  <p class="card-price">Precio: $2.290</p>
                   <!-- Disponibilidad -->
                   <p class="card-availability"><strong>Disponibilidad:</strong> 
                     {% for product in products %}
@@ -212,16 +211,16 @@
         <!-- Card -->
         <div class="card h-100">
             <!-- Imagen -->
-            <img src="{% static "producto/IMG/arbustos/Arbusto5.webp" %}" class="card-img-top" alt="Imagen del producto">
+            <img src="{% static "producto/IMG/217035-1600-1600.webp" %}" class="card-img-top" alt="Imagen del producto">
             <div class="card-body d-flex flex-column">
                 <!-- Nombre -->
-                <h5 class="card-title">Boj - Buxus Sempervirens</h5>
+                <h5 class="card-title">Soporte De Celular Broadcast Series</h5>
                 <!-- Descripcion -->
-                <p class="card-text">Arbusto Compacto Y Siempre Verde, Su Gran Tolerancia A La Poda Lo Hace Ideal Para La Formación De Setos Planta Tóxica.</p>
+                <p class="card-text">El Soporte para celular pertence a la línea Broadcast Series.</p>
                 <!-- Contenedor -->
                 <div class="mt-auto">
                   <!-- Precio -->
-                  <p class="card-price">Precio: $8.900</p>
+                  <p class="card-price">Precio: $11.990</p>
                   <!-- Disponibilidad -->
                   <p class="card-availability"><strong>Disponibilidad:</strong> 
                     {% for product in products %}
@@ -248,12 +247,12 @@
         <!-- Card -->
         <div class="card h-100">
             <!-- Imagen de la card -->
-            <img src="{% static "producto/IMG/arbustos/Arbusto6.webp" %}" class="card-img-top" alt="Imagen del producto">
+            <img src="{% static "producto/IMG/217036-1600-1600.webp" %}" class="card-img-top" alt="Imagen del producto">
             <div class="card-body d-flex flex-column">
                 <!-- Nombre de la card -->
-                <h5 class="card-title">Salvia Roja - Salvia Microphylla</h5>
+                <h5 class="card-title">Soporte Para Celular Con Seguro Negro</h5>
                 <!-- Descripcion de la card -->
-                <p class="card-text">Planta decorativa por su floración roja y sus hojas aromáticas, de color verde plateado.  Reconocida por sus propiedades medicinales.</p>
+                <p class="card-text">Este Soporte para Celular con Seguro lo encuentras en color negro.</p>
                 <!-- Contenedor -->
                 <div class="mt-auto">
                   <!-- Precio -->
@@ -283,39 +282,39 @@
 </div>
 <!--  Fin Cards -->
 
- <!-- Footer -->
- <footer class="bg-success text-light py-2">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 mt-2">
-        <h5>Contacto</h5>
-        <ul class="list-unstyled text-light">
-          <li><i class="fa-solid fa-house me-2"></i>Dirección: Avenida Siempreviva #742, Springfield</i></li>
-          <li><i class="fa-solid fa-phone me-2"></i>Teléfono: +123 456 789 </i></li>
-          <li><i class="fa-solid fa-envelope me-2"></i>Correo Electrónico: info@rinconverde.com</i></li>
-          <li><i class="fa-solid fa-circle-question me-2"></i></i>Ayuda</i></li>
-      </ul>
-      </div>
-      <div class="col-md-4 mt-2">
-        <h5>Redes Sociales</h5>
-        <ul class="list-unstyled">
-          <li><a href="https://www.facebook.com" class="text-light"><i class="fab fa-facebook-f me-2"></i>Facebook</a></li>
-          <li><a href="https://www.x.com" class="text-light"><i class="fab fa-twitter me-2"></i>Twitter</a></li>
-          <li><a href="https://www.instagram.com" class="text-light"><i class="fab fa-instagram me-2"></i>Instagram</a></li>
+   <!-- Footer -->
+   <footer class="bg-success text-light py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mt-2">
+          <h5>Contacto</h5>
+          <ul class="list-unstyled text-light">
+            <li><i class="fa-solid fa-house me-2"></i>Dirección: Avenida Siempreviva #742, Springfield</i></li>
+            <li><i class="fa-solid fa-phone me-2"></i>Teléfono: +123 456 789 </i></li>
+            <li><i class="fa-solid fa-envelope me-2"></i>Correo Electrónico: info@zenvibes.com</i></li>
+            <li><i class="fa-solid fa-circle-question me-2"></i></i>Ayuda</i></li>
         </ul>
+        </div>
+        <div class="col-md-4 mt-2">
+          <h5>Redes Sociales</h5>
+          <ul class="list-unstyled">
+            <li><a href="https://www.facebook.com" class="text-light"><i class="fab fa-facebook-f me-2"></i>Facebook</a></li>
+            <li><a href="https://www.x.com" class="text-light"><i class="fab fa-twitter me-2"></i>Twitter</a></li>
+            <li><a href="https://www.instagram.com" class="text-light"><i class="fab fa-instagram me-2"></i>Instagram</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4 mt-2">
+          <h5>Categorias</h5>
+          <ul class="list-unstyled text-light">
+              <li> Hogar </li>
+              <li> Tecnologia </li>
+              <li> Salud y Belleza </li>
+              <li> Jugetes </li>
+          </ul>
       </div>
-      <div class="col-md-4 mt-2">
-        <h5>Categorias</h5>
-        <ul class="list-unstyled text-light">
-            <li> Brotes </li>
-            <li> Arbustos </li>
-            <li> Sustratos </li>
-            <li> Maceteros </li>
-        </ul>
+      </div>
     </div>
-    </div>
-  </div>
-</footer>
+  </footer>
   
 
   <!-- Bootstrap -->

@@ -16,11 +16,11 @@
   <title>Jardin Solidario</title>
 </head>
 <body>
-  <!-- Inicio de la barra de navegación -->
+<!-- Inicio de la barra de navegación -->
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <!-- Este es el logo o nombre de la página web -->
-  <img src="{% static "producto/IMG/Helen (2).png" %}" alt="" style="width: 100px;">
-  <a class="navbar-brand text-white" href="#"><strong>Rincón Verde</strong></a>
+  
+  <a class="navbar-brand text-white" href="#"><strong>Zen Vibes</strong></a>
   <!-- Este botón aparece cuando la pantalla es pequeña (responsive design) -->
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,16 +34,16 @@
         <a class="nav-link text-white" href="{% url "index" %}"><strong>Inicio</strong></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "brotes" %}"><strong>Brotes</strong></a>
+        <a class="nav-link text-white" href="{% url "brotes" %}"><strong>Hogar</strong></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "arbustos" %}"><strong>Arbustos</strong></a>
+        <a class="nav-link text-white" href="{% url "arbustos" %}"><strong>Tecnologia</strong></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "sustrato" %}"><strong>Sustratos</strong></a>
+        <a class="nav-link text-white" href="{% url "sustrato" %}"><strong>Salud y Belleza</strong></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "macetero" %}"><strong>Maceteros</strong></a>
+        <a class="nav-link text-white" href="{% url "macetero" %}"><strong>Juguetes</strong></a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white" href="{% url "nosotros" %}"><strong>Nosotros</strong></a>
@@ -57,7 +57,7 @@
       <a href="{% url 'cart:view_cart' %}" class="text-decoration-none text-white">
         <i class="fa fa-shopping-cart"></i>
       </a>
-    </span>
+    </span>    
   </div>
 </nav>
 <!-- Fin de la barra de navegación -->
@@ -103,15 +103,16 @@
         <div class="col-md-6">
             <div class="video-container">
                 <video src="{% static "producto/IMG/margarita.mp4" %}" loop autoplay muted></video>
-                <h3> Juntos Cultivamos </h3>
+                <h3> Sostenibles, porque lo hacemos juntos.  </h3>
             </div>
         </div>
         <div class="col-md-6">
             <div class="content"> 
-                <h3> ¿Por Qué Elegirnos? </h3>
-                <p>Somos una comunidad unida por la pasión por la jardinería y el deseo de hacer el bien. Nuestro proyecto comenzó cuando un grupo de vecinos decidió vender productos para jardinería, con el objetivo de recaudar fondos para una fundación sin fines de lucro.</p>
-                <p>Compromiso es seguir apoyando a la fundación y a nuestra comunidad, ofreciendo productos de alta calidad y fomentando el amor por la jardinería. Gracias por ser parte de esta noble causa y ayudarnos a hacer una diferencia significativa.</p>
-                <p>Elegirnos como tienda no solo significa adquirir productos de alta calidad para jardinería, sino también contribuir a una causa noble. Nos esforzamos por ofrecer un excelente servicio al cliente y productos que cumplen con los más altos estándares. Al apoyar nuestra tienda, no solo estás embelleciendo tu jardín, sino también ayudando a mejorar la vida de muchas personas y protegiendo el medio ambiente. ¡Únete a nosotros en esta misión y hagamos la diferencia juntos!</p>
+              <h3>¿Por Qué Elegirnos?</h3>
+              <p>En ZenVibe Imports, llevamos 15 años ofreciendo productos inspirados en la cultura japonesa desde nuestra tienda en Santiago, Chile. Ahora buscamos expandirnos con una página web y una aplicación móvil para satisfacer la creciente demanda nacional e internacional.</p>
+              <p>Nos comprometemos a brindar artículos de alta calidad, como decoración, ropa y accesorios, manteniendo la esencia del estilo de vida zen. Queremos que más personas accedan a nuestros productos fácilmente y disfruten de una experiencia única.</p>
+              <p>Elegir ZenVibe Imports es mucho más que adquirir productos: es formar parte de una comunidad que valora la belleza, la serenidad y la conexión cultural. Con tu apoyo, ayudamos a llevar la esencia del Japón a cada rincón. ¡Únete a nuestra misión y transforma tus espacios con nosotros!</p>
+              
                 <pre></pre>
             </div>
         </div>
@@ -129,7 +130,7 @@
           <ul class="list-unstyled text-light">
             <li><i class="fa-solid fa-house me-2"></i>Dirección: Avenida Siempreviva #742, Springfield</i></li>
             <li><i class="fa-solid fa-phone me-2"></i>Teléfono: +123 456 789 </i></li>
-            <li><i class="fa-solid fa-envelope me-2"></i>Correo Electrónico: info@rinconverde.com</i></li>
+            <li><i class="fa-solid fa-envelope me-2"></i>Correo Electrónico: info@zenvibes.com</i></li>
             <li><i class="fa-solid fa-circle-question me-2"></i></i>Ayuda</i></li>
         </ul>
         </div>
@@ -144,10 +145,10 @@
         <div class="col-md-4 mt-2">
           <h5>Categorias</h5>
           <ul class="list-unstyled text-light">
-              <li> Brotes </li>
-              <li> Arbustos </li>
-              <li> Sustratos </li>
-              <li> Maceteros </li>
+              <li> Hogar </li>
+              <li> Tecnologia </li>
+              <li> Salud y Belleza </li>
+              <li> Jugetes </li>
           </ul>
       </div>
       </div>

@@ -16,11 +16,12 @@
   <title>Rincon Verde</title>
 </head>
 <body>
-  <!-- Inicio de la barra de navegación -->
+
+<!-- Inicio de la barra de navegación -->
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <!-- Este es el logo o nombre de la página web -->
-  <img src="{% static "producto/IMG/Helen (2).png" %}" alt="" style="width: 100px;">
-  <a class="navbar-brand text-white" href="#"><strong>Rincón Verde</strong></a>
+  
+  <a class="navbar-brand text-white" href="#"><strong>Zen Vibes</strong></a>
   <!-- Este botón aparece cuando la pantalla es pequeña (responsive design) -->
   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,16 +35,16 @@
         <a class="nav-link text-white" href="{% url "index" %}"><strong>Inicio</strong></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "brotes" %}"><strong>Brotes</strong></a>
+        <a class="nav-link text-white" href="{% url "brotes" %}"><strong>Hogar</strong></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "arbustos" %}"><strong>Arbustos</strong></a>
+        <a class="nav-link text-white" href="{% url "arbustos" %}"><strong>Tecnologia</strong></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "sustrato" %}"><strong>Sustratos</strong></a>
+        <a class="nav-link text-white" href="{% url "sustrato" %}"><strong>Salud y Belleza</strong></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link text-white" href="{% url "macetero" %}"><strong>Maceteros</strong></a>
+        <a class="nav-link text-white" href="{% url "macetero" %}"><strong>Juguetes</strong></a>
       </li>
       <li class="nav-item">
         <a class="nav-link text-white" href="{% url "nosotros" %}"><strong>Nosotros</strong></a>
@@ -57,7 +58,7 @@
       <a href="{% url 'cart:view_cart' %}" class="text-decoration-none text-white">
         <i class="fa fa-shopping-cart"></i>
       </a>
-    </span>
+    </span>    
   </div>
 </nav>
 <!-- Fin de la barra de navegación -->
@@ -94,39 +95,39 @@
   </form>
 </div>
 
-  <!-- Footer -->
-  <footer class="bg-success text-light py-2">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 mt-2">
-          <h5>Contacto</h5>
-          <ul class="list-unstyled text-light">
-            <li><i class="fa-solid fa-house me-2"></i>Dirección: Avenida Siempreviva #742, Springfield</i></li>
-            <li><i class="fa-solid fa-phone me-2"></i>Teléfono: +123 456 789 </i></li>
-            <li><i class="fa-solid fa-envelope me-2"></i>Correo Electrónico: info@rinconverde.com</i></li>
-            <li><i class="fa-solid fa-circle-question me-2"></i></i>Ayuda</i></li>
-        </ul>
-        </div>
-        <div class="col-md-4 mt-2">
-          <h5>Redes Sociales</h5>
-          <ul class="list-unstyled">
-            <li><a href="https://www.facebook.com" class="text-light"><i class="fab fa-facebook-f me-2"></i>Facebook</a></li>
-            <li><a href="https://www.x.com" class="text-light"><i class="fab fa-twitter me-2"></i>Twitter</a></li>
-            <li><a href="https://www.instagram.com" class="text-light"><i class="fab fa-instagram me-2"></i>Instagram</a></li>
+    <!-- Footer -->
+    <footer class="bg-success text-light py-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 mt-2">
+            <h5>Contacto</h5>
+            <ul class="list-unstyled text-light">
+              <li><i class="fa-solid fa-house me-2"></i>Dirección: Avenida Siempreviva #742, Springfield</i></li>
+              <li><i class="fa-solid fa-phone me-2"></i>Teléfono: +123 456 789 </i></li>
+              <li><i class="fa-solid fa-envelope me-2"></i>Correo Electrónico: info@zenvibes.com</i></li>
+              <li><i class="fa-solid fa-circle-question me-2"></i></i>Ayuda</i></li>
           </ul>
+          </div>
+          <div class="col-md-4 mt-2">
+            <h5>Redes Sociales</h5>
+            <ul class="list-unstyled">
+              <li><a href="https://www.facebook.com" class="text-light"><i class="fab fa-facebook-f me-2"></i>Facebook</a></li>
+              <li><a href="https://www.x.com" class="text-light"><i class="fab fa-twitter me-2"></i>Twitter</a></li>
+              <li><a href="https://www.instagram.com" class="text-light"><i class="fab fa-instagram me-2"></i>Instagram</a></li>
+            </ul>
+          </div>
+          <div class="col-md-4 mt-2">
+            <h5>Categorias</h5>
+            <ul class="list-unstyled text-light">
+                <li> Hogar </li>
+                <li> Tecnologia </li>
+                <li> Salud y Belleza </li>
+                <li> Jugetes </li>
+            </ul>
         </div>
-        <div class="col-md-4 mt-2">
-          <h5>Categorias</h5>
-          <ul class="list-unstyled text-light">
-              <li> Brotes </li>
-              <li> Arbustos </li>
-              <li> Sustratos </li>
-              <li> Maceteros </li>
-          </ul>
+        </div>
       </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
   <!-- Bootstrap -->
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
